@@ -1,14 +1,13 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="{{route('dashboard') }}">KUA PALLANGGA</a>
+            <a href="{{route('dashboard') }}">DIVLERN GWE</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="{{route('dashboard') }}">KUA PALLANGGA</a>
+            <a href="{{route('dashboard') }}">DIVLERN GWE</a>
         </div>
 
         <ul class="sidebar-menu">
-
             <li class="menu-header">Dashboard</li>
 
             <li class="nav-item  {{ $menu == 'dashboard' ? 'active' : '' }}">
@@ -24,15 +23,14 @@
 
                         <li class="{{ $menu == 'pegawai' ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('pegawai.index') }}">
-                                Data Pegawai
+                                Data Mahasiswa
                             </a>
                         </li>
                         <li class="{{ $menu == 'agenda' ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('agenda.index') }}">
-                                Data Kegiatan
+                                Data Tugas
                             </a>
                         </li>
-
                     </ul>
                 </li>
 
@@ -43,10 +41,9 @@
                 </li>
 
 
-
                 <li class="{{ $menu == 'absensi' ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('absensi.index') }}">
-                        <i class="fas fa-wallet"></i> <span>Data Absensi</span>
+                        <i class="fas fa-wallet"></i> <span>Data Pengumpulan Tugas</span>
                     </a>
                 </li>
 
@@ -56,12 +53,10 @@
                         <i class="fas fa-user"></i> <span>Data Akun</span>
                     </a>
                 </li>
-
                 <li class="menu-header">Landing Page</li>
-
             @endif
 
-            @if (session('role') == 'user' || session('role') == 'penghulu')
+            @if (session('role') == 'user')
 
                 <li class="{{ $menu == 'agenda' ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('agenda.index') }}">
@@ -75,7 +70,6 @@
                     </a>
                 </li>
                 <li class="menu-header">Landing Page</li>
-
             @endif
 
             @if (session('role') == 'dosen')
@@ -88,11 +82,10 @@
 
                 <li class="{{ $menu == 'absensi' ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('absensi.index') }}">
-                        <i class="fas fa-wallet"></i> <span>Data Absensi</span>
+                        <i class="fas fa-wallet"></i> <span>Data Tugas</span>
                     </a>
                 </li>
                 <li class="menu-header">Landing Page</li>
-
             @endif
         </ul>
         <div class="mt-4 mb-4 p-3 hide-sidebar-mini">

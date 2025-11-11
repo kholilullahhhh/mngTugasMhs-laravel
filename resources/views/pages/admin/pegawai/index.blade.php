@@ -27,10 +27,10 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Data Pegawai</h1>
+                <h1>Data Mahasiswa</h1>
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item active"><a href="{{ route('dashboard') }}">Dashboard</a></div>
-                    <div class="breadcrumb-item">Data Pegawai</div>
+                    <div class="breadcrumb-item">Data Mahasiswa</div>
                 </div>
             </div>
 
@@ -39,7 +39,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Daftar Pegawai</h4>
+                                <h4>Daftar Mahasiswa</h4>
                                 <div class="card-header-action">
                                     <a href="{{ route('pegawai.create') }}" class="btn btn-primary btn-icon icon-left">
                                         <i class="fas fa-plus"></i> Tambah Pegawai
@@ -54,7 +54,7 @@
                                                 <th>#</th>
                                                 <th>Nama</th>
                                                 <th>Username</th>
-                                                <th>NIP</th>
+                                                <th>NIM</th>
                                                 <th>Role</th>
                                                 <th>Aksi</th>
                                             </tr>
@@ -159,7 +159,7 @@
                         text: '{{ session('error') }}',
                     });
                 @endif
-            });
+                    });
         </script>
     @endpush
 @endsection

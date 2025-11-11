@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->string('username');
             $table->string('password');
             $table->string('nip')->unique()->nullable();
-            $table->enum('role', ['admin', 'user','dosen'])->default('user'); //user = Mahasiswa
+            $table->enum('role', ['admin', 'user', 'dosen'])->default('user'); //user = Mahasiswa
             $table->timestamps();
         });
     }

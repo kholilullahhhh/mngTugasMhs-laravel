@@ -21,29 +21,16 @@ class AdminSeeder extends Seeder
                 'role' => 'admin',
             ],
             [
-                'name' => 'kepala KUA',
-                'username' => 'kepala',
-                'password' => bcrypt('kepala'),
-                'role' => 'kepala_kua',
+                'name' => 'Dosen',
+                'username' => 'dosen',
+                'password' => bcrypt('dosen'),
+                'role' => 'dosen',
             ],
             [
-                'name' => 'penghulu',
-                'username' => 'penghulu',
-                'password' => bcrypt('penghulu'),
-                'role' => 'penghulu',
-            ],
-            [
-                'name' => 'penyuluh',
-                'username' => 'penyuluh',
-                'password' => bcrypt('penyuluh'),
-                'role' => 'user', // penyuluh
-            ],
-            
-            [
-                'name' => 'validator',
-                'username' => 'validator',
-                'password' => bcrypt('validator'),
-                'role' => 'validator', // penyuluh
+                'name' => 'Mahasiswa',
+                'username' => 'mahasiswa',
+                'password' => bcrypt('mahasiswa'),
+                'role' => 'user',
             ],
         ];
 
@@ -51,61 +38,61 @@ class AdminSeeder extends Seeder
             [
                 'name' => 'Hj. Rosdiana, S.Pd.I',
                 'username' => 'rosdiana',
-                'nip' => '197709142014112001',
+                'nip' => '232323',
                 'role' => 'user', // penyuluh
             ],
             [
                 'name' => 'Kamisari, S.Ag',
                 'username' => 'kamisari',
-                'nip' => '196902092007101202',
+                'nip' => '232323',
                 'role' => 'user',
             ],
             [
                 'name' => 'Herniati, S.Shi',
                 'username' => 'herniati',
-                'nip' => '197604112023012005',
+                'nip' => '232323',
                 'role' => 'user',
             ],
             [
                 'name' => 'Ilham, S.Ag',
                 'username' => 'ilham',
-                'nip' => '197010152025112007',
+                'nip' => '232323',
                 'role' => 'user',
             ],
             [
                 'name' => 'Sukarniati, S.Kom',
                 'username' => 'sukarniati',
-                'nip' => null,
+                'nip' => '232323',
                 'role' => 'user',
             ],
             [
                 'name' => 'Makmur, S.Ag',
                 'username' => 'makmur',
-                'nip' => '197408042023211007',
+                'nip' => '232323',
                 'role' => 'user',
             ],
             [
                 'name' => 'Dra. Hj. Rustiani Mahomoto',
                 'username' => 'rustiani',
-                'nip' => null,
+                'nip' => '232323',
                 'role' => 'user',
             ],
             [
                 'name' => 'Ismiyanti Rahman, S.H.I',
                 'username' => 'ismiyanti',
-                'nip' => null,
+                'nip' => '232323',
                 'role' => 'user',
             ],
             [
                 'name' => 'Abd. Salam, S.Ag',
                 'username' => 'abdsalam',
-                'nip' => '197604282009101001',
-                'role' => 'penghulu',
+                'nip' => '232323',
+                'role' => 'user',
             ],
             [
                 'name' => 'Marlina, S.Pd.I',
                 'username' => 'marlina',
-                'nip' => '198203252025202010',
+                'nip' => '232323',
                 'role' => 'user',
             ],
         ];
@@ -120,7 +107,7 @@ class AdminSeeder extends Seeder
                 'role' => $user['role'],
             ]);
         }
-            foreach ($users as $user) {
+        foreach ($users as $user) {
             Admin::create([
                 'name' => $user['name'],
                 'username' => $user['username'],
