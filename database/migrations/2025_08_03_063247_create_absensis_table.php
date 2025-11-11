@@ -1,0 +1,33 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration {
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('absensis', function (Blueprint $table) {
+            $table->id();
+            $table->string('agenda_id');
+            $table->string('user_id')->nullable();
+            $table->string('dokumentasi')->nullable();
+            $table->string('laporan')->nullable();
+            $table->enum('status', ['hadir', 'tidak hadir', 'izin', 'sakit', 'terlambat']); //status kehadiran
+            $table->string('keterangan')->nullable(); // Optional field for additional notes
+            $table->enum('validation_status', ['pending', 'validated', 'rejected'])->default('pending'); // validasi status
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('absensis');
+    }
+};
