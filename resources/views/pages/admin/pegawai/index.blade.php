@@ -42,7 +42,7 @@
                                 <h4>Daftar Mahasiswa</h4>
                                 <div class="card-header-action">
                                     <a href="{{ route('pegawai.create') }}" class="btn btn-primary btn-icon icon-left">
-                                        <i class="fas fa-plus"></i> Tambah Pegawai
+                                        <i class="fas fa-plus"></i> Tambah Mahasiswa
                                     </a>
                                 </div>
                             </div>
@@ -159,7 +159,7 @@
                         text: '{{ session('error') }}',
                     });
                 @endif
-                    });
+                            });
         </script>
     @endpush
 @endsection

@@ -14,7 +14,7 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Data Jadwal Kegiatan</h1>
+                <h1>Data Tugas Mahasiswa</h1>
             </div>
             @if (session('role') == 'admin')
 
@@ -27,7 +27,7 @@
                                     <!-- Navigation Buttons -->
 
                                     <a href="{{ route('agenda.create') }}" class="btn btn-primary text-white my-3">+ Tambah
-                                        Kegiatan</a>
+                                        Tugas</a>
 
                                     <!-- Tables Section -->
                                     <!-- PPNPN -->
@@ -37,11 +37,11 @@
                                             <thead>
                                                 <tr>
                                                     <th class="text-center">#</th>
-                                                    <th>Judul Agenda</th>
+                                                    <th>Judul Tugas</th>
                                                     {{-- <th>Isi Agenda</th> --}}
-                                                    <th>Lokasi Kegiatan</th>
-                                                    <th>Tanggal Agenda</th>
-                                                    <th>Jam Agenda</th>
+                                                    <th>Mata Kuliah</th>
+                                                    <th>Tanggal Pembuatan</th>
+                                                    <th>Jam Pengumpulan Terakhir</th>
                                                     <th>Status</th>
                                                     <th>Action</th>
                                                 </tr>
@@ -52,22 +52,20 @@
                                                     setlocale(LC_ALL, 'IND');
 
                                                     $tgl_kegiatan = strftime('%d %B', strtotime($data->tgl_kegiatan));
-                                                    $tgl_selesai = strftime('%d %B %Y', strtotime($data->tgl_selesai));
-                                                                                                                                                                                                                                                                                                                        ?>
+                                                    $tgl_selesai = strftime('%d %B %Y', strtotime($data->tgl_selesai));?>
                                                                                     <tr>
                                                                                         <td>{{ ++$i }}</td>
                                                                                         <td>{{ $data->judul ?? '' }}</td>
                                                                                         {{-- <td>{!! $data->isi ?? '' !!}</td> --}}
                                                                                         <td>{{ $data->tempat_kegiatan }} </td>
                                                                                         <td>{{ $data->tgl_kegiatan }} - {{ $data->tgl_selesai }} </td>
-                                                                                        <td>{{ $data->status }} </td>
+                                                                                        <td>{{ $data->jam_mulai }} </td>
                                                                                         <td>
                                                                                             @if ($data->status == 'publish')
                                                                                                 <span class="badge badge-success">Publish</span>
                                                                                             @else
                                                                                                 <span class="badge badge-warning">Belum Publish</span>
                                                                                             @endif
-
                                                                                         </td>
                                                                                         <td>
                                                                                             <a href="{{ route('agenda.edit', $data->id) }}"
@@ -104,11 +102,11 @@
                                             <thead>
                                                 <tr>
                                                     <th class="text-center">#</th>
-                                                    <th>Judul Agenda</th>
+                                                    <th>Judul Tugas</th>
                                                     {{-- <th>Isi Agenda</th> --}}
-                                                    <th>Ruangan</th>
-                                                    <th>Tanggal Agenda</th>
-                                                    <th>Jam Agenda</th>
+                                                    <th>Mata Kuliah</th>
+                                                    <th>Tanggal Pembuatan</th>
+                                                    <th>Jam Pengumpulan Terakhir</th>
                                                     <th>Status</th>
                                                 </tr>
                                             </thead>
@@ -119,20 +117,21 @@
 
                                                     $tgl_kegiatan = strftime('%d %B', strtotime($data->tgl_kegiatan));
                                                     $tgl_selesai = strftime('%d %B %Y', strtotime($data->tgl_selesai));
-                                                                                                                                                                                                                                                                                                                        ?>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ?>
                                                                                     <tr>
                                                                                         <td>{{ ++$i }}</td>
                                                                                         <td>{{ $data->judul ?? '' }}</td>
                                                                                         {{-- <td>{!! $data->isi ?? '' !!}</td> --}}
                                                                                         <td>{{ $data->tempat_kegiatan }} </td>
                                                                                         <td>{{ $data->tgl_kegiatan }} - {{ $data->tgl_selesai }} </td>
-                                                                                        <td>{{ $data->status }} </td>
+                                                                                        <td>{{ $data->jam_mulai }} </td>
                                                                                         <td>
                                                                                             @if ($data->status == 'publish')
                                                                                                 <span class="badge badge-success">Publish</span>
                                                                                             @else
                                                                                                 <span class="badge badge-warning">Belum Publish</span>
                                                                                             @endif
+
                                                                                         </td>
                                                                                     </tr>
                                                 @endforeach

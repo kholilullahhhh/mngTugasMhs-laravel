@@ -31,7 +31,7 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Data Absensi Rapat</h1>
+                <h1>Data Pengumpulan Tugas</h1>
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item active"><a href="{{ route('dashboard') }}">Dashboard</a></div>
                     <div class="breadcrumb-item">Absensi</div>
@@ -43,10 +43,10 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Daftar Absensi</h4>
+                                <h4>Daftar Pengumpulan Tugas</h4>
                                 <div class="card-header-action">
                                     <a href="{{ route('absensi.create') }}" class="btn btn-primary btn-icon icon-left">
-                                        <i class="fas fa-plus"></i> Tambah Absensi
+                                        <i class="fas fa-plus"></i> Tambah Pengumpulan Tugas
                                     </a>
                                 </div>
                             </div>
@@ -56,14 +56,12 @@
                                         <thead class="text-white">
                                             <tr>
                                                 <th class="text-center" width="5%">No</th>
-                                                <th width="15%">Nama Agenda</th>
-                                                <th width="12%">Nama Pegawai</th>
-                                                <th width="10%">NIP</th>
+                                                <th width="15%">Nama Tugas</th>
+                                                <th width="12%">Nama Mahasoswa</th>
+                                                <th width="10%">NIM</th>
                                                 <th width="10%">Status</th>
                                                 <th width="12%">Tanggal</th>
                                                 <th width="10%">Laporan</th>
-                                                <th width="10%">Dokumentasi</th>
-                                                <th width="10%">Valdiasi</th>
                                                 <th width="8%">Aksi</th>
                                             </tr>
                                         </thead>
@@ -77,10 +75,10 @@
                                                     <td>
                                                         @switch($data->status)
                                                             @case('hadir')
-                                                                <span class="badge badge-success">Hadir</span>
+                                                                <span class="badge badge-success">Terkumpul</span>
                                                                 @break
                                                             @case('tidak hadir')
-                                                                <span class="badge badge-danger">Tidak Hadir</span>
+                                                                <span class="badge badge-danger">Tidak Terkumpul</span>
                                                                 @break
                                                             @case('izin')
                                                                 <span class="badge badge-warning">Izin</span>
@@ -107,32 +105,6 @@
                                                             <span class="text-muted">-</span>
                                                         @endif
                                                     </td>
-                                                    <td>
-                                                        @if($data->dokumentasi)
-                                                            <a href="{{ asset('upload/dokumentasi/' . $data->dokumentasi) }}" 
-                                                               target="_blank">
-                                                                <img class="img-thumbnail" 
-                                                                     src="{{ asset('upload/dokumentasi/' . $data->dokumentasi) }}" 
-                                                                     alt="Dokumentasi">
-                                                            </a>
-                                                        @else
-                                                            <span class="text-muted">-</span>
-                                                        @endif
-                                                    </td>
-                                                    <td>
-                                                        @switch($data->validation_status)
-                                                            @case('pending')
-                                                                <span class="badge badge-warning">Pending</span>
-                                                                @break
-                                                            @case('validated')
-                                                                <span class="badge badge-success">Validated</span>
-                                                                @break
-                                                            @case('rejected')
-                                                                <span class="badge badge-danger">Rejected</span>
-                                                                @break
-                                                            @default
-                                                                <span class="badge badge-light">Unknown</span>
-                                                        @endswitch
                                                     <td class="action-buttons">
                                                         <a href="{{ route('absensi.edit', $data->id) }}"
                                                             class="btn btn-sm btn-warning" title="Edit">

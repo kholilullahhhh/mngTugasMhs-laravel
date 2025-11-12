@@ -55,10 +55,10 @@
         <div class="main-content">
             <section class="section">
                 <div class="section-header">
-                    <h1>Tambah Data Absensi</h1>
+                    <h1>Tambah Data Tugas</h1>
                     <div class="section-header-breadcrumb">
                         <div class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></div>
-                        <div class="breadcrumb-item"><a href="{{ route('absensi.index') }}">Absensi</a></div>
+                        <div class="breadcrumb-item"><a href="{{ route('absensi.index') }}">Tugas</a></div>
                         <div class="breadcrumb-item active">Tambah Data</div>
                     </div>
                 </div>
@@ -72,10 +72,10 @@
                                     <div class="form-body">
                                         <!-- Agenda Rapat -->
                                         <div class="form-group row mb-4">
-                                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3 required-field">Agenda Rapat</label>
+                                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3 required-field">Tugas</label>
                                             <div class="col-sm-12 col-md-7">
                                                 <select name="agenda_id" class="form-control select2" required>
-                                                    <option value="">Pilih Agenda Rapat</option>
+                                                    <option value="">Pilih Tugas</option>
                                                     @foreach($agendas as $agenda)
                                                         <option value="{{ $agenda->id }}" {{ old('agenda_id') == $agenda->id ? 'selected' : '' }}>
                                                             {{ $agenda->judul }} ({{ \Carbon\Carbon::parse($agenda->tgl_kegiatan)->format('d/m/Y H:i') }})
@@ -90,31 +90,28 @@
 
                                         <!-- Pegawai -->
                                         <div class="form-group row mb-4">
-                                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Pegawai</label>
+                                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Mahasiswa</label>
                                             <div class="col-sm-12 col-md-7">
                                                 <select name="user_id" class="form-control select2">
-                                                    <option value="">Pilih Pegawai (Opsional)</option>
+                                                    <option value="">Pilih Mahasiswa (Opsional)</option>
                                                     @foreach($users as $user)
                                                         <option value="{{ $user->id }}" {{ old('user_id') == $user->id ? 'selected' : '' }}>
-                                                            {{ $user->name }} (NIP: {{ $user->nip ?? '-' }})
+                                                            {{ $user->name }} (NIM: {{ $user->nip ?? '-' }})
                                                         </option>
                                                     @endforeach
                                                 </select>
-                                                <small class="text-muted">Biarkan kosong jika absensi untuk diri sendiri</small>
+                                                <small class="text-muted">Biarkan kosong jika Tugas untuk diri sendiri</small>
                                             </div>
                                         </div>
 
                                         <!-- Status Kehadiran -->
                                         <div class="form-group row mb-4">
-                                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3 required-field">Status Kehadiran</label>
+                                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3 required-field">Status Terkumpulnya Tugas</label>
                                             <div class="col-sm-12 col-md-7">
                                                 <select name="status" class="form-control" required>
-                                                    <option value="">Pilih Status Kehadiran</option>
-                                                    <option value="hadir" {{ old('status') == 'hadir' ? 'selected' : '' }}>Hadir</option>
-                                                    <option value="tidak hadir" {{ old('status') == 'tidak hadir' ? 'selected' : '' }}>Tidak Hadir</option>
-                                                    <option value="izin" {{ old('status') == 'izin' ? 'selected' : '' }}>Izin</option>
-                                                    <option value="sakit" {{ old('status') == 'sakit' ? 'selected' : '' }}>Sakit</option>
-                                                    <option value="terlambat" {{ old('status') == 'terlambat' ? 'selected' : '' }}>Terlambat</option>
+                                                    <option value="">Pilih Status Terkumpulnya Tugas</option>
+                                                    <option value="hadir" {{ old('status') == 'hadir' ? 'selected' : '' }}>Terkumpul</option>
+                                                    <option value="tidak hadir" {{ old('status') == 'tidak hadir' ? 'selected' : '' }}>Tidak Tidak Terkumpul</option>
                                                 </select>
                                                 @error('status')
                                                     <div class="text-danger mt-1">{{ $message }}</div>
@@ -132,7 +129,7 @@
                                         </div>
 
                                         <!-- Dokumentasi -->
-                                        <div class="form-group row mb-4">
+                                        <!-- <div class="form-group row mb-4">
                                             <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3 required-field">Dokumentasi</label>
                                             <div class="col-sm-12 col-md-7">
                                                 <div id="image-preview" class="image-preview">
@@ -145,7 +142,7 @@
                                                     <div class="text-danger mt-1">{{ $message }}</div>
                                                 @enderror
                                             </div>
-                                        </div>
+                                        </div> -->
 
                                         <!-- Laporan -->
                                         <div class="form-group row mb-4">

@@ -61,7 +61,7 @@
                                         <div class="col-md-6">
                                             <!-- Employee Information -->
                                             <div class="form-group">
-                                                <label>NIP</label>
+                                                <label>NIM</label>
                                                 <input type="text" name="nip" class="form-control" value="{{ old('nip') }}">
                                             </div>
                                             <div class="form-group">
