@@ -34,11 +34,11 @@
                     </ul>
                 </li>
 
-                <li class="{{ $menu == 'indikator_level' ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('indikator_level.index') }}">
-                        <i class="fas fa-wallet"></i> <span>Penilaian Kinerja</span>
-                    </a>
-                </li>
+                <!-- <li class="{{ $menu == 'indikator_level' ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ route('indikator_level.index') }}">
+                                <i class="fas fa-wallet"></i> <span>Penilaian Kinerja</span>
+                            </a>
+                        </li> -->
 
 
                 <li class="{{ $menu == 'absensi' ? 'active' : '' }}">

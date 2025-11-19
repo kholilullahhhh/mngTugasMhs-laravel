@@ -70,493 +70,519 @@
                 letter-spacing: 0.5px;
             }
 
-            .bg-hadir {
-                background-color: rgba(40, 167, 69, 0.1);
-                color: var(--success);
-            }
+            .bg-dikumpulkan {
+                        background-color: rgba(40, 167, 69, 0.1);
+                        color: var(--success);
+                    }
 
-            .bg-tidak_hadir {
-                background-color: rgba(220, 53, 69, 0.1);
-                color: var(--danger);
-            }
+                    .bg-belum_dikumpulkan {
+                        background-color: rgba(220, 53, 69, 0.1);
+                        color: var(--danger);
+                    }
 
-            .bg-izin {
-                background-color: rgba(23, 162, 184, 0.1);
-                color: var(--info);
-            }
+                    .bg-terlambat {
+                        background-color: rgba(255, 193, 7, 0.1);
+                        color: var(--warning);
+                    }
 
-            .bg-sakit {
-                background-color: rgba(108, 117, 125, 0.1);
-                color: #6c757d;
-            }
+                    .bg-ditinjau {
+                        background-color: rgba(23, 162, 184, 0.1);
+                        color: var(--info);
+                    }
 
-            .bg-terlambat {
-                background-color: rgba(255, 193, 7, 0.1);
-                color: var(--warning);
-            }
+                    .bg-direvisi {
+                        background-color: rgba(108, 117, 125, 0.1);
+                        color: #6c757d;
+                    }
 
-            .recent-list {
-                max-height: 350px;
-                overflow-y: auto;
-            }
+                    .recent-list {
+                        max-height: 350px;
+                        overflow-y: auto;
+                    }
 
-            .recent-list::-webkit-scrollbar {
-                width: 6px;
-            }
+                    .recent-list::-webkit-scrollbar {
+                        width: 6px;
+                    }
 
-            .recent-list::-webkit-scrollbar-track {
-                background: #f1f1f1;
-                border-radius: 10px;
-            }
+                    .recent-list::-webkit-scrollbar-track {
+                        background: #f1f1f1;
+                        border-radius: 10px;
+                    }
 
-            .recent-list::-webkit-scrollbar-thumb {
-                background: #c1c1c1;
-                border-radius: 10px;
-            }
+                    .recent-list::-webkit-scrollbar-thumb {
+                        background: #c1c1c1;
+                        border-radius: 10px;
+                    }
 
-            .recent-list::-webkit-scrollbar-thumb:hover {
-                background: #a8a8a8;
-            }
+                    .recent-list::-webkit-scrollbar-thumb:hover {
+                        background: #a8a8a8;
+                    }
 
-            .recent-item {
-                transition: all 0.3s ease;
-                border-left: 4px solid transparent;
-            }
+                    .recent-item {
+                        transition: all 0.3s ease;
+                        border-left: 4px solid transparent;
+                    }
 
-            .recent-item:hover {
-                transform: translateX(5px);
-                box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
-            }
+                    .recent-item:hover {
+                        transform: translateX(5px);
+                        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
+                    }
 
-            .section-header {
-                padding: 20px 0;
-                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-                margin-bottom: 30px;
-            }
+                    .section-header {
+                        padding: 20px 0;
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                        margin-bottom: 30px;
+                    }
 
-            .avatar-sm {
-                width: 36px;
-                height: 36px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 50%;
-                background-color: #e9ecef;
-                color: #495057;
-                font-weight: 600;
-            }
+                    .avatar-sm {
+                        width: 36px;
+                        height: 36px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                        background-color: #e9ecef;
+                        color: #495057;
+                        font-weight: 600;
+                    }
 
-            .progress-thin {
-                height: 8px;
-                border-radius: 4px;
-            }
-        </style>
+                    .progress-thin {
+                        height: 8px;
+                        border-radius: 4px;
+                    }
+
+                    .task-priority-high {
+                        border-left-color: var(--danger);
+                    }
+
+                    .task-priority-medium {
+                        border-left-color: var(--warning);
+                    }
+
+                    .task-priority-low {
+                        border-left-color: var(--info);
+                    }
+                </style>
     @endpush
 
-    <div class="main-content">
-        <section class="section">
-            <div class="section-header">
-                <div class="d-flex justify-content-between align-items-center w-100">
-                    <div>
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard Admin</h1>
-                        <p class="mb-0 text-muted">Ringkasan aktivitas sistem</p>
-                    </div>
-                    <div class="section-header-breadcrumb">
-                        <div class="breadcrumb-item active"><i class="bi bi-house-door"></i> Dashboard</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Summary Cards Row -->
-            @if (session('role') == 'admin')
-                <div class="row mb-4">
-                    <!-- User Statistics -->
-                    <div class="col-xl-3 col-md-6 mb-4">
-                        <div class="dashboard-card card h-100">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center">
-                                    <div class="card-icon"
-                                        style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);">
-                                        <i class="bi bi-people"></i>
-                                    </div>
-                                    <div>
-                                        <div class="card-label">Total Pengguna</div>
-                                        <div class="card-value">{{ $totalUsers }}</div>
-                                    </div>
-                                </div>
-                                <div class="mt-3">
-                                    <div class="d-flex justify-content-between small text-muted mb-1">
-                                        <span>Admin</span>
-                                        <span>{{ $adminCount }}</span>
-                                    </div>
-                                    <div class="d-flex justify-content-between small text-muted mb-1">
-                                        <span>Kepala KUA</span>
-                                        <span>{{ $kepalaKuaCount }}</span>
-                                    </div>
-                                    <div class="d-flex justify-content-between small text-muted">
-                                        <span>Pegawai</span>
-                                        <span>{{ $pegawaiCount }}</span>
-                                    </div>
-                                </div>
-                            </div>
+        <div class="main-content">
+            <section class="section">
+                <div class="section-header">
+                    <div class="d-flex justify-content-between align-items-center w-100">
+                        <div>
+                            <h1 class="h3 mb-0 text-gray-800">Dashboard Sistem Tugas</h1>
+                            <p class="mb-0 text-muted">Ringkasan pengumpulan tugas mahasiswa</p>
                         </div>
-                    </div>
-
-                    <!-- Agenda Statistics -->
-                    <div class="col-xl-3 col-md-6 mb-4">
-                        <div class="dashboard-card card h-100">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center">
-                                    <div class="card-icon"
-                                        style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%);">
-                                        <i class="bi bi-calendar-event"></i>
-                                    </div>
-                                    <div>
-                                        <div class="card-label">Total Agenda</div>
-                                        <div class="card-value">{{ $totalAgendas }}</div>
-                                    </div>
-                                </div>
-                                <div class="mt-3">
-                                    <div class="progress progress-thin mb-2">
-                                        <div class="progress-bar bg-success"
-                                            style="width: {{ $totalAgendas ? round(($agendasThisMonth / $totalAgendas) * 100) : 0 }}%">
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between small text-muted">
-                                        <span>Agenda Bulan Ini</span>
-                                        <span>{{ $agendasThisMonth }}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Attendance Statistics -->
-                    <div class="col-xl-3 col-md-6 mb-4">
-                        <div class="dashboard-card card h-100">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center">
-                                    <div class="card-icon"
-                                        style="background: linear-gradient(135deg, #17a2b8 0%, #6f42c1 100%);">
-                                        <i class="bi bi-clipboard-check"></i>
-                                    </div>
-                                    <div>
-                                        <div class="card-label">Total Absensi</div>
-                                        <div class="card-value">{{ $totalAttendances }}</div>
-                                    </div>
-                                </div>
-                                <div class="mt-3">
-                                    <div class="d-flex justify-content-between small text-muted mb-1">
-                                        <span>Hadir</span>
-                                        <span>{{ $hadirCount }}</span>
-                                    </div>
-                                    <div class="d-flex justify-content-between small text-muted mb-1">
-                                        <span>Tidak Hadir</span>
-                                        <span>{{ $tidakHadirCount }}</span>
-                                    </div>
-                                    <div class="d-flex justify-content-between small text-muted">
-                                        <span>Izin</span>
-                                        <span>{{ $izinCount }}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Performance Statistics -->
-                    <div class="col-xl-3 col-md-6 mb-4">
-                        <div class="dashboard-card card h-100">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center">
-                                    <div class="card-icon"
-                                        style="background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%);">
-                                        <i class="bi bi-graph-up"></i>
-                                    </div>
-                                    <div>
-                                        <div class="card-label">Penilaian Kinerja</div>
-                                        <div class="card-value">{{ $totalAssessments }}</div>
-                                    </div>
-                                </div>
-                                <div class="mt-3">
-                                    <div class="text-center mb-2">
-                                        <span class="h4 font-weight-bold">{{ $averageScore }}</span>
-                                        <span class="text-muted small">/ 4.0</span>
-                                    </div>
-                                    <div class="progress progress-thin">
-                                        <div class="progress-bar bg-warning" style="width: {{ ($averageScore / 4) * 100 }}%">
-                                        </div>
-                                    </div>
-                                    <div class="text-center small text-muted mt-1">Rata-rata Skor</div>
-                                </div>
-                            </div>
+                        <div class="section-header-breadcrumb">
+                            <div class="breadcrumb-item active"><i class="bi bi-house-door"></i> Dashboard</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Charts Row -->
-                <div class="row mb-4">
-                    <!-- Monthly Attendance Chart -->
-                    <div class="col-lg-8 mb-4">
-                        <div class="dashboard-card card h-100">
-                            <div class="card-header d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary">Statistik Kehadiran Tahun {{ $selectedYear }}</h6>
-                                <div class="d-flex">
-                                    <select id="yearSelect" class="form-control form-control-sm">
-                                        @foreach(range(date('Y') - 2, date('Y')) as $year)
-                                            <option value="{{ $year }}" {{ $selectedYear == $year ? 'selected' : '' }}>{{ $year }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="chart-container">
-                                    <div id="attendanceChart"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Attendance Distribution -->
-                    <div class="col-lg-4 mb-4">
-                        <div class="dashboard-card card h-100">
-                            <div class="card-header">
-                                <h6 class="m-0 font-weight-bold text-primary">Distribusi Kehadiran</h6>
-                            </div>
-                            <div class="card-body">
-                                <div id="attendanceDistributionChart"></div>
-                                <div class="mt-3 text-center small">
-                                    <span class="mr-2"><i class="fas fa-circle text-success"></i> Hadir</span>
-                                    <span class="mr-2"><i class="fas fa-circle text-danger"></i> Tidak Hadir</span>
-                                    <span class="mr-2"><i class="fas fa-circle text-info"></i> Izin</span>
-                                    <span class="mr-2"><i class="fas fa-circle text-secondary"></i> Sakit</span>
-                                    <span><i class="fas fa-circle text-warning"></i> Terlambat</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Recent Activities Row -->
-                <div class="row">
-                    <!-- Recent Agendas -->
-                    <div class="col-lg-4 mb-4">
-                        <div class="dashboard-card card h-100">
-                            <div class="card-header d-flex justify-content-between align-items-center">
-                                <h6 class="m-0 font-weight-bold text-primary">Agenda Terbaru</h6>
-                                <a href="{{ route('agenda.index') }}" class="btn btn-sm btn-primary">
-                                    <i class="bi bi-list-ul"></i> Lihat Semua
-                                </a>
-                            </div>
-                            <div class="card-body recent-list">
-                                @forelse($recentAgendas as $agenda)
-                                    <div class="recent-item mb-3 p-3 border rounded">
-                                        <div class="d-flex justify-content-between align-items-center mb-2">
-                                            <h6 class="font-weight-bold mb-0">{{ $agenda->judul }}</h6>
-                                            <small
-                                                class="text-muted">{{ \Carbon\Carbon::parse($agenda->tgl_kegiatan)->format('d M') }}</small>
+                <!-- Summary Cards Row -->
+                @if (session('role') == 'admin')
+                    <div class="row mb-4">
+                        <!-- User Statistics -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="dashboard-card card h-100">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="card-icon"
+                                            style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);">
+                                            <i class="bi bi-people"></i>
                                         </div>
-                                        <div class="d-flex justify-content-between">
-                                            <small class="text-muted"><i class="bi bi-clock"></i> {{ $agenda->jam_mulai }}</small>
-                                            <small class="text-muted"><i class="bi bi-geo-alt"></i>
-                                                {{ $agenda->tempat_kegiatan }}</small>
+                                        <div>
+                                            <div class="card-label">Total Pengguna</div>
+                                            <div class="card-value">{{ $totalUsers }}</div>
                                         </div>
                                     </div>
-                                @empty
-                                    <div class="text-center py-4">
-                                        <i class="bi bi-calendar-x text-muted" style="font-size: 3rem;"></i>
-                                        <p class="mt-2">Belum ada agenda</p>
+                                    <div class="mt-3">
+                                        <div class="d-flex justify-content-between small text-muted mb-1">
+                                            <span>Admin</span>
+                                            <span>{{ $adminCount }}</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between small text-muted mb-1">
+                                            <span>Dosen</span>
+                                            <span>{{ $kepalaKuaCount }}</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between small text-muted">
+                                            <span>Mahasiswa</span>
+                                            <span>{{ $pegawaiCount }}</span>
+                                        </div>
                                     </div>
-                                @endforelse
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Recent Attendances -->
-                    <div class="col-lg-4 mb-4">
-                        <div class="dashboard-card card h-100">
-                            <div class="card-header d-flex justify-content-between align-items-center">
-                                <h6 class="m-0 font-weight-bold text-primary">Absensi Terbaru</h6>
-                                <a href="{{ route('absensi.index') }}" class="btn btn-sm btn-primary">
-                                    <i class="bi bi-list-ul"></i> Lihat Semua
-                                </a>
-                            </div>
-                            <div class="card-body recent-list">
-                                @forelse($recentAttendances as $attendance)
-                                    <div
-                                        class="recent-item mb-3 p-3 border rounded bg-{{ str_replace(' ', '_', $attendance->status) }}">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div>
-
-                                                <small class="text-muted">
-                                                    {{ $attendance->agenda->judul }}
-                                                </small>
+                        <!-- Task Statistics -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="dashboard-card card h-100">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="card-icon"
+                                            style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%);">
+                                            <i class="bi bi-journal-check"></i>
+                                        </div>
+                                        <div>
+                                            <div class="card-label">Total Tugas</div>
+                                            <div class="card-value">{{ $totalAgendas }}</div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-3">
+                                        <div class="progress progress-thin mb-2">
+                                            <div class="progress-bar bg-success"
+                                                style="width: {{ $totalAgendas ? round(($agendasThisMonth / $totalAgendas) * 100) : 0 }}%">
                                             </div>
-                                            <div class="text-right">
-                                                <span class="status-badge bg-{{ str_replace(' ', '_', $attendance->status) }}">
-                                                    {{ ucfirst($attendance->status) }}
-                                                </span>
-                                                <div class="text-muted small mt-1">
-                                                    {{ \Carbon\Carbon::parse($attendance->created_at)->format('d M') }}
+                                        </div>
+                                        <div class="d-flex justify-content-between small text-muted">
+                                            <span>Tugas Bulan Ini</span>
+                                            <span>{{ $agendasThisMonth }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submission Statistics -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="dashboard-card card h-100">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="card-icon"
+                                            style="background: linear-gradient(135deg, #17a2b8 0%, #6f42c1 100%);">
+                                            <i class="bi bi-send-check"></i>
+                                        </div>
+                                        <div>
+                                            <div class="card-label">Total Pengumpulan</div>
+                                            <div class="card-value">{{ $totalAttendances }}</div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-3">
+                                        <div class="d-flex justify-content-between small text-muted mb-1">
+                                            <span>Terkumpul</span>
+                                            <span>{{ $hadirCount }}</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between small text-muted mb-1">
+                                            <span>Belum Dikumpul</span>
+                                            <span>{{ $tidakHadirCount }}</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between small text-muted">
+                                            <span>Terlambat</span>
+                                            <span>{{ $izinCount }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Performance Statistics -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="dashboard-card card h-100">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="card-icon"
+                                            style="background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%);">
+                                            <i class="bi bi-graph-up"></i>
+                                        </div>
+                                        <div>
+                                            <div class="card-label">Penilaian Tugas</div>
+                                            <div class="card-value">{{ $totalAssessments }}</div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-3">
+                                        <div class="text-center mb-2">
+                                            <span class="h4 font-weight-bold">{{ $averageScore }}</span>
+                                            <span class="text-muted small">/ 4.0</span>
+                                        </div>
+                                        <div class="progress progress-thin">
+                                            <div class="progress-bar bg-warning" style="width: {{ ($averageScore / 4) * 100 }}%">
+                                            </div>
+                                        </div>
+                                        <div class="text-center small text-muted mt-1">Rata-rata Nilai</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts Row -->
+                    <div class="row mb-4">
+                        <!-- Monthly Submission Chart -->
+                        <div class="col-lg-8 mb-4">
+                            <div class="dashboard-card card h-100">
+                                <div class="card-header d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Statistik Pengumpulan Tugas Tahun {{ $selectedYear }}</h6>
+                                    <div class="d-flex">
+                                        <select id="yearSelect" class="form-control form-control-sm">
+                                            @foreach(range(date('Y') - 2, date('Y')) as $year)
+                                                <option value="{{ $year }}" {{ $selectedYear == $year ? 'selected' : '' }}>{{ $year }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <div id="submissionChart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submission Distribution -->
+                        <div class="col-lg-4 mb-4">
+                            <div class="dashboard-card card h-100">
+                                <div class="card-header">
+                                    <h6 class="m-0 font-weight-bold text-primary">Distribusi Pengumpulan</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div id="submissionDistributionChart"></div>
+                                    <div class="mt-3 text-center small">
+                                        <span class="mr-2"><i class="fas fa-circle text-success"></i> Dikumpulkan</span>
+                                        <span class="mr-2"><i class="fas fa-circle text-danger"></i> Belum Dikumpul</span>
+                                        <span class="mr-2"><i class="fas fa-circle text-warning"></i> Terlambat</span>
+                                        <span class="mr-2"><i class="fas fa-circle text-info"></i> Ditinjau</span>
+                                        <span><i class="fas fa-circle text-secondary"></i> Direvisi</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activities Row -->
+                    <div class="row">
+                        <!-- Recent Tasks -->
+                        <div class="col-lg-4 mb-4">
+                            <div class="dashboard-card card h-100">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h6 class="m-0 font-weight-bold text-primary">Tugas Terbaru</h6>
+                                    <a href="{{ route('agenda.index') }}" class="btn btn-sm btn-primary">
+                                        <i class="bi bi-list-ul"></i> Lihat Semua
+                                    </a>
+                                </div>
+                                <div class="card-body recent-list">
+                                    @forelse($recentAgendas as $agenda)
+                                        <div class="recent-item mb-3 p-3 border rounded task-priority-{{ $agenda->prioritas ?? 'medium' }}">
+                                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                                <h6 class="font-weight-bold mb-0 text-truncate" style="max-width: 70%;">{{ $agenda->judul }}</h6>
+                                                <small
+                                                    class="text-muted">{{ \Carbon\Carbon::parse($agenda->tgl_kegiatan)->format('d M') }}</small>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <small class="text-muted"><i class="bi bi-clock"></i> {{ $agenda->jam_mulai }}</small>
+                                                <small class="text-muted"><i class="bi bi-calendar-event"></i>
+                                                    {{ \Carbon\Carbon::parse($agenda->tgl_kegiatan)->diffForHumans() }}</small>
+                                            </div>
+                                            <div class="mt-2">
+                                                <span class="badge badge-light">{{ $agenda->mata_kuliah ?? 'Umum' }}</span>
+                                                @if(isset($agenda->prioritas))
+                                                    <span class="badge badge-{{ $agenda->prioritas == 'high' ? 'danger' : ($agenda->prioritas == 'medium' ? 'warning' : 'info') }}">
+                                                        {{ ucfirst($agenda->prioritas) }}
+                                                    </span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    @empty
+                                        <div class="text-center py-4">
+                                            <i class="bi bi-journal-x text-muted" style="font-size: 3rem;"></i>
+                                            <p class="mt-2">Belum ada tugas</p>
+                                        </div>
+                                    @endforelse
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Submissions -->
+                        <div class="col-lg-4 mb-4">
+                            <div class="dashboard-card card h-100">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h6 class="m-0 font-weight-bold text-primary">Pengumpulan Terbaru</h6>
+                                    <a href="{{ route('absensi.index') }}" class="btn btn-sm btn-primary">
+                                        <i class="bi bi-list-ul"></i> Lihat Semua
+                                    </a>
+                                </div>
+                                <div class="card-body recent-list">
+                                    @forelse($recentAttendances as $attendance)
+                                        <div
+                                            class="recent-item mb-3 p-3 border rounded bg-{{ str_replace(' ', '_', $attendance->status) }}">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h6 class="mb-1 small">{{ $attendance->user->name ?? 'Mahasiswa' }}</h6>
+                                                    <small class="text-muted">
+                                                        {{ $attendance->agenda->judul }}
+                                                    </small>
+                                                </div>
+                                                <div class="text-right">
+                                                    <span class="status-badge bg-{{ str_replace(' ', '_', $attendance->status) }}">
+                                                        {{ ucfirst($attendance->status) }}
+                                                    </span>
+                                                    <div class="text-muted small mt-1">
+                                                        {{ \Carbon\Carbon::parse($attendance->created_at)->format('d M H:i') }}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                @empty
-                                    <div class="text-center py-4">
-                                        <i class="bi bi-clipboard-x text-muted" style="font-size: 3rem;"></i>
-                                        <p class="mt-2">Belum ada absensi</p>
-                                    </div>
-                                @endforelse
+                                    @empty
+                                        <div class="text-center py-4">
+                                            <i class="bi bi-send-x text-muted" style="font-size: 3rem;"></i>
+                                            <p class="mt-2">Belum ada pengumpulan</p>
+                                        </div>
+                                    @endforelse
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Assessments -->
+                        <div class="col-lg-4 mb-4">
+                            <div class="dashboard-card card h-100">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h6 class="m-0 font-weight-bold text-primary">Penilaian Terbaru</h6>
+                                    <a href="{{ route('indikator_level.index') }}" class="btn btn-sm btn-primary">
+                                        <i class="bi bi-list-ul"></i> Lihat Semua
+                                    </a>
+                                </div>
+                                <div class="card-body recent-list">
+                                    @forelse($recentAssessments as $assessment)
+                                        <div class="recent-item mb-3 p-3 border rounded">
+                                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                                <h6 class="mb-0 small">{{ $assessment->user->name ?? 'Mahasiswa' }}</h6>
+                                                <span class="badge badge-warning">{{ $assessment->skor_akhir }}/4</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <small class="text-muted">{{ $assessment->kategori }}</small>
+                                                <small
+                                                    class="text-muted">{{ \Carbon\Carbon::parse($assessment->created_at)->format('d M') }}</small>
+                                            </div>
+                                            <div class="mt-2">
+                                                <div class="progress progress-thin">
+                                                    <div class="progress-bar bg-warning" style="width: {{ ($assessment->skor_akhir / 4) * 100 }}%"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @empty
+                                        <div class="text-center py-4">
+                                            <i class="bi bi-clipboard-x text-muted" style="font-size: 3rem;"></i>
+                                            <p class="mt-2">Belum ada penilaian</p>
+                                        </div>
+                                    @endforelse
+                                </div>
                             </div>
                         </div>
                     </div>
+                @endif
+            </section>
+        </div>
 
-                    <!-- Recent Assessments -->
-                    <div class="col-lg-4 mb-4">
-                        <div class="dashboard-card card h-100">
-                            <div class="card-header d-flex justify-content-between align-items-center">
-                                <h6 class="m-0 font-weight-bold text-primary">Penilaian Terbaru</h6>
-                                <a href="{{ route('indikator_level.index') }}" class="btn btn-sm btn-primary">
-                                    <i class="bi bi-list-ul"></i> Lihat Semua
-                                </a>
-                            </div>
-                            <div class="card-body recent-list">
-                                @forelse($recentAssessments as $assessment)
-                                    <div class="recent-item mb-3 p-3 border rounded">
-                                        <div class="d-flex justify-content-between align-items-center mb-2">
-                                            <span class="badge badge-warning">{{ $assessment->skor_akhir }}/4</span>
-                                        </div>
-                                        <div class="d-flex justify-content-between">
-                                            <small class="text-muted">{{ $assessment->kategori }}</small>
-                                            <small
-                                                class="text-muted">{{ \Carbon\Carbon::parse($assessment->created_at)->format('d M') }}</small>
-                                        </div>
-                                    </div>
-                                @empty
-                                    <div class="text-center py-4">
-                                        <i class="bi bi-clipboard-x text-muted" style="font-size: 3rem;"></i>
-                                        <p class="mt-2">Belum ada penilaian</p>
-                                    </div>
-                                @endforelse
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endif
-        </section>
-    </div>
-
-    @push('scripts')
-        <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.28.3/dist/apexcharts.min.js"></script>
-        <script>
-            // Monthly Attendance Chart
-            var attendanceChart = new ApexCharts(document.querySelector("#attendanceChart"), {
-                series: [
-                    {
-                        name: 'Hadir',
-                        data: @json(array_column($monthlyAttendance, 'hadir'))
-                    },
-                    {
-                        name: 'Tidak Hadir',
-                        data: @json(array_column($monthlyAttendance, 'tidak_hadir'))
-                    },
-                    {
-                        name: 'Izin',
-                        data: @json(array_column($monthlyAttendance, 'izin'))
-                    }
-                ],
-                chart: {
-                    type: 'bar',
-                    height: '100%',
-                    stacked: true,
-                    toolbar: {
-                        show: false
-                    }
-                },
-                plotOptions: {
-                    bar: {
-                        horizontal: false,
-                        borderRadius: 4,
-                        columnWidth: '55%',
-                    },
-                },
-                colors: ['#28a745', '#dc3545', '#17a2b8'],
-                dataLabels: {
-                    enabled: false
-                },
-                stroke: {
-                    show: true,
-                    width: 2,
-                    colors: ['transparent']
-                },
-                xaxis: {
-                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'],
-                },
-                yaxis: {
-                    title: {
-                        text: 'Jumlah Kehadiran'
-                    }
-                },
-                fill: {
-                    opacity: 1
-                },
-                tooltip: {
-                    y: {
-                        formatter: function (val) {
-                            return val + " orang"
-                        }
-                    }
-                }
-            });
-            attendanceChart.render();
-
-            // Attendance Distribution Chart
-            var attendanceDistributionChart = new ApexCharts(document.querySelector("#attendanceDistributionChart"), {
-                series: [{{ $hadirCount }}, {{ $tidakHadirCount }}, {{ $izinCount }}, {{ $sakitCount }}, {{ $terlambatCount }}],
-                chart: {
-                    type: 'donut',
-                    height: 350
-                },
-                labels: ['Hadir', 'Tidak Hadir', 'Izin', 'Sakit', 'Terlambat'],
-                colors: ['#28a745', '#dc3545', '#17a2b8', '#6c757d', '#ffc107'],
-                responsive: [{
-                    breakpoint: 480,
-                    options: {
-                        chart: {
-                            width: 200
+        @push('scripts')
+            <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.28.3/dist/apexcharts.min.js"></script>
+            <script>
+                // Monthly Submission Chart
+                var submissionChart = new ApexCharts(document.querySelector("#submissionChart"), {
+                    series: [
+                        {
+                            name: 'Dikumpulkan',
+                            data: @json(array_column($monthlyAttendance, 'hadir'))
                         },
-                        legend: {
-                            position: 'bottom'
+                        {
+                            name: 'Belum Dikumpul',
+                            data: @json(array_column($monthlyAttendance, 'tidak_hadir'))
+                        },
+                        {
+                            name: 'Terlambat',
+                            data: @json(array_column($monthlyAttendance, 'izin'))
+                        }
+                    ],
+                    chart: {
+                        type: 'bar',
+                        height: '100%',
+                        stacked: true,
+                        toolbar: {
+                            show: false
+                        }
+                    },
+                    plotOptions: {
+                        bar: {
+                            horizontal: false,
+                            borderRadius: 4,
+                            columnWidth: '55%',
+                        },
+                    },
+                    colors: ['#28a745', '#dc3545', '#ffc107'],
+                    dataLabels: {
+                        enabled: false
+                    },
+                    stroke: {
+                        show: true,
+                        width: 2,
+                        colors: ['transparent']
+                    },
+                    xaxis: {
+                        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'],
+                    },
+                    yaxis: {
+                        title: {
+                            text: 'Jumlah Pengumpulan'
+                        }
+                    },
+                    fill: {
+                        opacity: 1
+                    },
+                    tooltip: {
+                        y: {
+                            formatter: function (val) {
+                                return val + " tugas"
+                            }
                         }
                     }
-                }],
-                plotOptions: {
-                    pie: {
-                        donut: {
-                            labels: {
-                                show: true,
-                                total: {
+                });
+                submissionChart.render();
+
+                // Submission Distribution Chart
+                var submissionDistributionChart = new ApexCharts(document.querySelector("#submissionDistributionChart"), {
+                    series: [{{ $hadirCount }}, {{ $tidakHadirCount }}, {{ $izinCount }}, {{ $sakitCount }}, {{ $terlambatCount }}],
+                    chart: {
+                        type: 'donut',
+                        height: 350
+                    },
+                    labels: ['Dikumpulkan', 'Belum Dikumpul', 'Terlambat', 'Ditinjau', 'Direvisi'],
+                    colors: ['#28a745', '#dc3545', '#ffc107', '#17a2b8', '#6c757d'],
+                    responsive: [{
+                        breakpoint: 480,
+                        options: {
+                            chart: {
+                                width: 200
+                            },
+                            legend: {
+                                position: 'bottom'
+                            }
+                        }
+                    }],
+                    plotOptions: {
+                        pie: {
+                            donut: {
+                                labels: {
                                     show: true,
-                                    label: 'Total',
-                                    formatter: function (w) {
-                                        return w.globals.seriesTotals.reduce((a, b) => {
-                                            return a + b
-                                        }, 0)
+                                    total: {
+                                        show: true,
+                                        label: 'Total',
+                                        formatter: function (w) {
+                                            return w.globals.seriesTotals.reduce((a, b) => {
+                                                return a + b
+                                            }, 0)
+                                        }
                                     }
                                 }
                             }
                         }
                     }
-                }
-            });
-            attendanceDistributionChart.render();
+                });
+                submissionDistributionChart.render();
 
-            // Handle year selection change
-            $('#yearSelect').change(function () {
-                const year = $(this).val();
-                window.location.href = "{{ route('dashboard') }}?year=" + year;
-            });
-        </script>
-    @endpush
+                // Handle year selection change
+                $('#yearSelect').change(function () {
+                    const year = $(this).val();
+                    window.location.href = "{{ route('dashboard') }}?year=" + year;
+                });
+            </script>
+        @endpush
 @endsection
