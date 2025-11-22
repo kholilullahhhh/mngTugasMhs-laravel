@@ -34,90 +34,95 @@ class AdminSeeder extends Seeder
             ],
         ];
 
+        // ============================
+        //  DAFTAR MAHASISWA (DIUBAH)
+        // ============================
         $users = [
             [
-                'name' => 'Hj. Rosdiana, S.Pd.I',
-                'username' => 'rosdiana',
-                'nip' => '232324',
-                'role' => 'user', // penyuluh
-            ],
-            [
-                'name' => 'Kamisari, S.Ag',
-                'username' => 'kamisari',
-                'nip' => '232325',
+                'name' => 'Muhammad Rizki Pratama',
+                'username' => 'rizki',
+                'nip' => '240001',
                 'role' => 'user',
             ],
             [
-                'name' => 'Herniati, S.Shi',
-                'username' => 'herniati',
-                'nip' => '232326',
+                'name' => 'Aulia Ramadhani',
+                'username' => 'aulia',
+                'nip' => '240002',
                 'role' => 'user',
             ],
             [
-                'name' => 'Ilham, S.Ag',
-                'username' => 'ilham',
-                'nip' => '232327',
+                'name' => 'Fajar Saputra',
+                'username' => 'fajar',
+                'nip' => '240003',
                 'role' => 'user',
             ],
             [
-                'name' => 'Sukarniati, S.Kom',
-                'username' => 'sukarniati',
-                'nip' => '232328',
+                'name' => 'Siti Nurbaya',
+                'username' => 'sitinurbaya',
+                'nip' => '240004',
                 'role' => 'user',
             ],
             [
-                'name' => 'Makmur, S.Ag',
-                'username' => 'makmur',
-                'nip' => '232329',
+                'name' => 'Ahmad Fauzan',
+                'username' => 'fauzan',
+                'nip' => '240005',
                 'role' => 'user',
             ],
             [
-                'name' => 'Dra. Hj. Rustiani Mahomoto',
-                'username' => 'rustiani',
-                'nip' => '232330',
+                'name' => 'Rina Amelia',
+                'username' => 'rina',
+                'nip' => '240006',
                 'role' => 'user',
             ],
             [
-                'name' => 'Ismiyanti Rahman, S.H.I',
-                'username' => 'ismiyanti',
-                'nip' => '232331',
+                'name' => 'Dwi Kurniawan',
+                'username' => 'dwi',
+                'nip' => '240007',
                 'role' => 'user',
             ],
             [
-                'name' => 'Abd. Salam, S.Ag',
-                'username' => 'abdsalam',
-                'nip' => '232332',
+                'name' => 'Lilis Handayani',
+                'username' => 'lilis',
+                'nip' => '240008',
                 'role' => 'user',
             ],
             [
-                'name' => 'Marlina, S.Pd.I',
-                'username' => 'marlina',
-                'nip' => '232334',
+                'name' => 'Bagas Putra Wijaya',
+                'username' => 'bagas',
+                'nip' => '240009',
+                'role' => 'user',
+            ],
+            [
+                'name' => 'Nadia Khairunnisa',
+                'username' => 'nadia',
+                'nip' => '240010',
                 'role' => 'user',
             ],
         ];
 
-        // seed data users (penyuluh & penghulu dari tabel)
+        // Insert ke tabel users
         foreach ($users as $user) {
             User::create([
                 'name' => $user['name'],
                 'username' => $user['username'],
                 'nip' => $user['nip'],
-                'password' => bcrypt('123456'), // password default
+                'password' => bcrypt('123456'),
                 'role' => $user['role'],
             ]);
         }
+
+        // Insert ke tabel admin
         foreach ($users as $user) {
             Admin::create([
                 'name' => $user['name'],
                 'username' => $user['username'],
                 'nip' => $user['nip'],
-                'password' => bcrypt('123456'), // password default
+                'password' => bcrypt('123456'),
                 'role' => $user['role'],
             ]);
         }
 
-        // seed akun default (admin, kepala, dll)
+        // Akun default
         foreach ($akun as $v) {
             Admin::create([
                 'name' => $v['name'],

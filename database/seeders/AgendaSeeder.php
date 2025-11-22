@@ -7,191 +7,188 @@ use App\Models\Agenda;
 
 class AgendaSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
         $agendas = [
-            // User 1 - Hj. Rosdiana, S.Pd.I
+            // User 1
             [
                 'user_id' => 1,
-                'judul' => 'Majelis Taklim',
-                'tempat_kegiatan' => 'Masjid Agung',
+                'judul' => 'Project Landing Page HTML & CSS',
+                'tempat_kegiatan' => 'Lab Web 1',
                 'tgl_kegiatan' => '2025-08-20',
                 'jam_mulai' => '08:00:00',
-                'deskripsi_kegiatan' => 'Kegiatan rutin Majelis Taklim.',
+                'deskripsi_kegiatan' => 'Membuat landing page responsif menggunakan HTML, CSS, dan sedikit JavaScript.',
                 'status' => 'publish',
             ],
             [
                 'user_id' => 1,
-                'judul' => 'Pendamping Halal',
-                'tempat_kegiatan' => 'KUA Kecamatan',
+                'judul' => 'Presentasi Desain UI/UX Aplikasi Mobile',
+                'tempat_kegiatan' => 'Ruang Presentasi 204',
                 'tgl_kegiatan' => '2025-08-21',
                 'jam_mulai' => '09:00:00',
-                'deskripsi_kegiatan' => 'Pendampingan sertifikasi halal bagi UMKM.',
+                'deskripsi_kegiatan' => 'Presentasi hasil perancangan UI/UX menggunakan Figma untuk aplikasi mobile.',
                 'status' => 'publish',
             ],
             [
                 'user_id' => 1,
-                'judul' => 'Pendamping UMKM',
-                'tempat_kegiatan' => 'Balai Desa',
+                'judul' => 'Tugas Mini Project Basis Data',
+                'tempat_kegiatan' => 'Lab Database',
                 'tgl_kegiatan' => '2025-08-22',
                 'jam_mulai' => '10:00:00',
-                'deskripsi_kegiatan' => 'Pendampingan penguatan usaha mikro masyarakat.',
+                'deskripsi_kegiatan' => 'Membuat ERD dan implementasi database MySQL untuk sistem toko online.',
                 'status' => 'publish',
             ],
 
-            // User 2 - Kamisari, S.Ag
+            // User 2
             [
                 'user_id' => 2,
-                'judul' => 'Majelis Ta’lim',
-                'tempat_kegiatan' => 'Masjid Nurul Huda',
+                'judul' => 'Belajar Routing Laravel & Controller',
+                'tempat_kegiatan' => 'Lab Framework',
                 'tgl_kegiatan' => '2025-08-23',
                 'jam_mulai' => '08:30:00',
-                'deskripsi_kegiatan' => 'Pengajian rutin Majelis Ta’lim.',
+                'deskripsi_kegiatan' => 'Mengerjakan modul dasar Laravel berupa routing, controller, dan blade template.',
                 'status' => 'publish',
             ],
             [
                 'user_id' => 2,
-                'judul' => 'Kelompok Remaja',
-                'tempat_kegiatan' => 'Aula Remaja Islam',
+                'judul' => 'Tugas Analisis Sistem Informasi',
+                'tempat_kegiatan' => 'Ruang 305',
                 'tgl_kegiatan' => '2025-08-24',
                 'jam_mulai' => '15:00:00',
-                'deskripsi_kegiatan' => 'Pembinaan dan kajian kelompok remaja.',
+                'deskripsi_kegiatan' => 'Menganalisis kebutuhan sistem untuk aplikasi absensi kampus.',
                 'status' => 'publish',
             ],
 
-            // User 3 - Herniati, S.Shi
+            // User 3
             [
                 'user_id' => 3,
-                'judul' => 'Majelis Taklim',
-                'tempat_kegiatan' => 'Musholla Al-Ikhlas',
+                'judul' => 'Laporan Praktikum Jaringan Komputer',
+                'tempat_kegiatan' => 'Lab Jaringan',
                 'tgl_kegiatan' => '2025-08-25',
                 'jam_mulai' => '09:00:00',
-                'deskripsi_kegiatan' => 'Kajian Majelis Taklim.',
+                'deskripsi_kegiatan' => 'Konfigurasi dasar router dan switch menggunakan Cisco Packet Tracer.',
                 'status' => 'publish',
             ],
 
-            // User 4 - Ilham, S.Ag
+            // User 4
             [
                 'user_id' => 4,
-                'judul' => 'Majelis Taklim',
-                'tempat_kegiatan' => 'Masjid Al-Falah',
+                'judul' => 'Analisis Keamanan Web (Cyber Security)',
+                'tempat_kegiatan' => 'Lab Keamanan',
                 'tgl_kegiatan' => '2025-08-26',
                 'jam_mulai' => '09:00:00',
-                'deskripsi_kegiatan' => 'Kegiatan Majelis Taklim bersama jamaah.',
+                'deskripsi_kegiatan' => 'Menganalisis celah keamanan dasar seperti XSS dan SQL Injection.',
                 'status' => 'publish',
             ],
             [
                 'user_id' => 4,
-                'judul' => 'TPQ',
-                'tempat_kegiatan' => 'TPQ Nurul Huda',
+                'judul' => 'Praktikum Pemrograman Berorientasi Objek',
+                'tempat_kegiatan' => 'Lab PBO',
                 'tgl_kegiatan' => '2025-08-27',
                 'jam_mulai' => '14:00:00',
-                'deskripsi_kegiatan' => 'Pembinaan anak-anak TPQ.',
+                'deskripsi_kegiatan' => 'Membuat class, inheritance, dan interface menggunakan Java.',
                 'status' => 'publish',
             ],
 
-            // User 5 - Sukarniati, S.Kom
+            // User 5
             [
                 'user_id' => 5,
-                'judul' => 'Majelis Taklim',
-                'tempat_kegiatan' => 'Masjid Raya',
+                'judul' => 'Tugas CRUD Laravel Dasar',
+                'tempat_kegiatan' => 'Ruang 108',
                 'tgl_kegiatan' => '2025-08-28',
                 'jam_mulai' => '08:30:00',
-                'deskripsi_kegiatan' => 'Majelis Taklim rutin.',
+                'deskripsi_kegiatan' => 'Membuat fitur CRUD sederhana untuk data mahasiswa menggunakan Laravel.',
                 'status' => 'publish',
             ],
             [
                 'user_id' => 5,
-                'judul' => 'TPQ',
-                'tempat_kegiatan' => 'TPQ Al-Ikhlas',
+                'judul' => 'Tugas Struktur Data Linked List',
+                'tempat_kegiatan' => 'Lab Struktur Data',
                 'tgl_kegiatan' => '2025-08-29',
                 'jam_mulai' => '14:30:00',
-                'deskripsi_kegiatan' => 'Belajar membaca Al-Qur’an untuk anak-anak.',
+                'deskripsi_kegiatan' => 'Implementasi single linked list dan double linked list menggunakan C++.',
                 'status' => 'publish',
             ],
 
-            // User 6 - Makmur, S.Ag
+            // User 6
             [
                 'user_id' => 6,
-                'judul' => 'Majelis Taklim',
-                'tempat_kegiatan' => 'Masjid Al-Muhajirin',
+                'judul' => 'Makalah Sistem Operasi',
+                'tempat_kegiatan' => 'Ruang 301',
                 'tgl_kegiatan' => '2025-08-30',
                 'jam_mulai' => '09:00:00',
-                'deskripsi_kegiatan' => 'Majelis Taklim untuk masyarakat umum.',
+                'deskripsi_kegiatan' => 'Membahas perbandingan arsitektur Linux, Windows, dan MacOS.',
                 'status' => 'publish',
             ],
             [
                 'user_id' => 6,
-                'judul' => 'TPQ',
-                'tempat_kegiatan' => 'TPQ Al-Hidayah',
+                'judul' => 'Praktikum Mobile Programming',
+                'tempat_kegiatan' => 'Lab Android',
                 'tgl_kegiatan' => '2025-08-31',
                 'jam_mulai' => '13:30:00',
-                'deskripsi_kegiatan' => 'TPQ untuk pembelajaran dasar Al-Qur’an.',
+                'deskripsi_kegiatan' => 'Membuat aplikasi catatan sederhana menggunakan Android Studio.',
                 'status' => 'publish',
             ],
             [
                 'user_id' => 6,
-                'judul' => 'Kelompok Remaja',
-                'tempat_kegiatan' => 'Balai Pemuda',
+                'judul' => 'Tugas Mini Project Machine Learning',
+                'tempat_kegiatan' => 'Lab AI',
                 'tgl_kegiatan' => '2025-09-01',
                 'jam_mulai' => '15:30:00',
-                'deskripsi_kegiatan' => 'Pembinaan remaja masjid dan kajian islami.',
+                'deskripsi_kegiatan' => 'Implementasi algoritma K-Means untuk klasterisasi data sederhana.',
                 'status' => 'publish',
             ],
 
-            // User 7 - Dra. Hj. Rustiani Mahomoto
+            // User 7
             [
                 'user_id' => 7,
-                'judul' => 'Majelis Taklim',
-                'tempat_kegiatan' => 'Gedung PKK',
+                'judul' => 'Review Buku Pemrograman Python',
+                'tempat_kegiatan' => 'Perpustakaan Daerah',
                 'tgl_kegiatan' => '2025-09-02',
                 'jam_mulai' => '09:00:00',
-                'deskripsi_kegiatan' => 'Majelis Taklim bersama masyarakat desa.',
+                'deskripsi_kegiatan' => 'Review dan rangkuman materi dasar Python dari buku referensi.',
                 'status' => 'publish',
             ],
 
-            // User 8 - Ismiyanti Rahman, S.H.I
+            // User 8
             [
                 'user_id' => 8,
-                'judul' => 'Majelis Taklim',
-                'tempat_kegiatan' => 'Masjid An-Nur',
+                'judul' => 'Tugas Rangkuman Materi AI Dasar',
+                'tempat_kegiatan' => 'Lab AI',
                 'tgl_kegiatan' => '2025-09-03',
                 'jam_mulai' => '09:00:00',
-                'deskripsi_kegiatan' => 'Pengajian Majelis Taklim rutin.',
+                'deskripsi_kegiatan' => 'Meringkas konsep dasar AI dan machine learning.',
                 'status' => 'publish',
             ],
 
-            // User 9 - Abd. Salam, S.Ag
+            // User 9
             [
                 'user_id' => 9,
-                'judul' => 'Pengawasan Nikah',
-                'tempat_kegiatan' => 'KUA Kecamatan',
+                'judul' => 'Observasi Proyek Internet of Things',
+                'tempat_kegiatan' => 'Workshop IoT',
                 'tgl_kegiatan' => '2025-09-04',
                 'jam_mulai' => '10:00:00',
-                'deskripsi_kegiatan' => 'Melakukan pengawasan pelaksanaan akad nikah.',
+                'deskripsi_kegiatan' => 'Mengamati cara kerja sensor dan aktuator dalam proyek IoT.',
                 'status' => 'publish',
             ],
 
-            // User 10 - Marlina, S.Pd.I
+            // User 10
             [
                 'user_id' => 10,
-                'judul' => 'Majelis Ta’lim',
-                'tempat_kegiatan' => 'Madrasah Ibtidaiyah',
+                'judul' => 'Presentasi Cloud Computing',
+                'tempat_kegiatan' => 'Aula Kampus',
                 'tgl_kegiatan' => '2025-09-05',
                 'jam_mulai' => '09:00:00',
-                'deskripsi_kegiatan' => 'Pengajian dan Majelis Ta’lim bersama guru dan wali murid.',
+                'deskripsi_kegiatan' => 'Presentasi materi tentang arsitektur dan manfaat cloud computing.',
                 'status' => 'publish',
             ],
             [
                 'user_id' => 10,
-                'judul' => 'TPQ',
-                'tempat_kegiatan' => 'TPQ Al-Furqan',
+                'judul' => 'Praktikum DevOps Dasar',
+                'tempat_kegiatan' => 'Lab DevOps',
                 'tgl_kegiatan' => '2025-09-06',
                 'jam_mulai' => '14:00:00',
-                'deskripsi_kegiatan' => 'Kegiatan TPQ untuk anak-anak desa.',
+                'deskripsi_kegiatan' => 'Mempelajari dasar Git, CI/CD, dan Docker untuk pemula.',
                 'status' => 'publish',
             ],
         ];
