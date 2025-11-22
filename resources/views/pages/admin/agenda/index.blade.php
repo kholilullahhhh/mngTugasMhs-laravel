@@ -117,7 +117,7 @@
 
                                                     $tgl_kegiatan = strftime('%d %B', strtotime($data->tgl_kegiatan));
                                                     $tgl_selesai = strftime('%d %B %Y', strtotime($data->tgl_selesai));
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ?>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ?>
                                                                                     <tr>
                                                                                         <td>{{ ++$i }}</td>
                                                                                         <td>{{ $data->judul ?? '' }}</td>
@@ -138,7 +138,6 @@
                                             </tbody>
                                         </table>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -167,6 +166,8 @@
                 var tableKegiatan = $('#table-agenda').DataTable({
                     paging: true,
                     searching: true,
+                    order: [[0, 'asc']],
+                    ordering: false,
                     language: {
                         url: 'https://cdn.datatables.net/plug-ins/2.1.0/i18n/id.json',
                     },

@@ -38,7 +38,7 @@
                                         <div class="col-md">
                                             <div class="form-group">
                                                 <label>Username</label>
-                                                <input value="{{ $datas->username }}"name="username" required
+                                                <input value="{{ $datas->username }}" name="username" required
                                                     placeholder="Masukkan Usernam untuk login" type="text"
                                                     class="form-control">
                                             </div>
@@ -58,10 +58,13 @@
                                                 <select name="role" required placeholder="Masukkan Akun"
                                                     class="form-control">
                                                     <option value="">-- Pilih Role Akun --</option>
-                                                    <option {{ $datas->role == 'guru' ? 'selected' : '' }}
-                                                        value="siswa">Siswa</option>
-                                                    <option {{ $datas->role == 'admin' ? 'selected' : '' }}
-                                                        value="admin">Admin</option>
+                                                    <option {{ $datas->role == 'mahasiswa' ? 'selected' : '' }}
+                                                        value="mahasiswa">Mahasiswa
+                                                    </option>
+                                                    <option {{ $datas->role == 'admin' ? 'selected' : '' }} value="admin">
+                                                        Admin</option>
+                                                    <option {{ $datas->role == 'dosen' ? 'selected' : '' }} value="dosen">
+                                                        Dosen</option>
                                                 </select>
                                             </div>
                                         </div>

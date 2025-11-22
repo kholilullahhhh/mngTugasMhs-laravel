@@ -28,17 +28,16 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label>Nama</label>
-                                                                <input name="name" required
-                                                                    placeholder="Masukkan Nama Akun" type="text"
-                                                                    class="form-control">
+                                                                <input name="name" required placeholder="Masukkan Nama Akun"
+                                                                    type="text" class="form-control">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label>Username</label>
                                                                 <input name="username" required
-                                                                    placeholder="Masukkan Usernam untuk login"
-                                                                    type="text" class="form-control">
+                                                                    placeholder="Masukkan Usernam untuk login" type="text"
+                                                                    class="form-control">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -57,9 +56,9 @@
                                                                 <select name="role" required placeholder="Masukkan Akun"
                                                                     class="form-control selectric">
                                                                     <option value="">-- Pilih Role Akun --</option>
-                                                                    <option value="user">Pegawai</option>
+                                                                    <option value="user">Mahasiswa</option>
                                                                     <option value="admin">Admin</option>
-                                                                    <option value="kepala_kua">Kepala KUA</option>
+                                                                    <option value="dosen">Dosen</option>
                                                                 </select>
                                                             </div>
                                                         </div>
