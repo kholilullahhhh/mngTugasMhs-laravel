@@ -9,12 +9,7 @@ class Kelas extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'user_id',
         'nm_kelas',
         'ruangan',
     ];
-    public function User()
-    {
-        return $this->hasMany(User::class, 'kelas_id', 'id');
-    }
 }

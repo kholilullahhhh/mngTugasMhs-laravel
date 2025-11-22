@@ -208,14 +208,14 @@ Route::group(
                 Route::post('/validasi/{id}', 'AbsensiController@validasi')->name('absensi.validasi');
             });
 
-            // Tema
-            Route::prefix('tema')->group(function () {
-                Route::get('/', 'TemaController@index')->name('tema.index');
-                Route::get('/create', 'TemaController@create')->name('tema.create');
-                Route::post('/store', 'TemaController@store')->name('tema.store');
-                Route::get('/edit/{id}', 'TemaController@edit')->name('tema.edit');
-                Route::put('/update', 'TemaController@update')->name('tema.update');
-                Route::post('/hapus/{id}', 'TemaController@destroy')->name('tema.hapus');
+            // Kelas
+            Route::prefix('kelas')->group(function () {
+                Route::get('/', 'KelasController@index')->name('kelas.index');
+                Route::get('/create', 'KelasController@create')->name('kelas.create');
+                Route::post('/store', 'KelasController@store')->name('kelas.store');
+                Route::get('/edit/{id}', 'KelasController@edit')->name('kelas.edit');
+                Route::put('/update', 'KelasController@update')->name('kelas.update');
+                Route::post('/hapus/{id}', 'KelasController@destroy')->name('kelas.hapus');
             });
 
             // Modul
