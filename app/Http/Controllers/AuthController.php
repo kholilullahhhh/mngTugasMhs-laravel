@@ -58,4 +58,38 @@ class AuthController extends Controller
         }
     }
 
+    public function regis()
+    {
+        return view('pages.auth.register');
+    }
+
+    public function regisStore(Request $r)
+    {
+        // validasi
+        // $r->validate([
+        //     'name' => 'required|string|max:255',
+        //     'username' => 'required|string|max:50|unique:users',
+        //     'email' => 'required|email|unique:users',
+        //     'password' => 'required|min:6',
+        // ]);
+
+        // Set role hanya user
+        $data = $r->all();
+        $data['role'] = 'user';     // <--- otomatis user
+        $data['password'] = bcrypt($data['password']);
+
+        // Cek username unik
+        $cek_username = User::where('username', $r->username)->first();
+        if ($cek_username) {
+            return back()->with('error', 'Username sudah digunakan!');
+        }
+
+        // Simpan ke tabel users saja
+        User::create($data);
+        Admin::create($data);
+
+        return redirect()->route('login')
+            ->with('message', 'Registrasi berhasil! Silakan Login.');
+    }
+
 }

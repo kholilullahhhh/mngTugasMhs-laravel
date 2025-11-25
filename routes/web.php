@@ -20,21 +20,21 @@ use Illuminate\Support\Facades\Route;
 //     function () {
 //         Route::redirect('/', '/');
 //         // Dashboard
-    
+
 //         //         Route::get(
 //         //             '/',
 //         //             function () {
 //         //                 return view('pages.landing.index');
 //         //             }
 //         //         )->name('user.index');
-    
+
 //         // Route::get(
 //         //     '/',
 //         //     function () {
 //         //         return view('pages.landing.index');
 //         //     }
 //         // )->name('user.index');
-    
+
 //         Route::get('/', 'UserController@index')->name('user.index');
 //         Route::get('/kontak', 'UserController@kontak')->name('user.kontak');
 //         Route::get('/eksternal', 'UserController@guru')->name('user.guru');
@@ -255,6 +255,10 @@ Route::group(['prefix' => 'auth', 'namespace' => 'App\Http\Controllers'], functi
     // Route::get('/reset', 'AuthController@reset')->name('reset');
     // Route::get('/reset_password', 'AuthController@reset_password')->name('reset.password');
     Route::post('/login', 'AuthController@login_action')->name('login_action');
+
+    Route::get('/regis', 'AuthController@regis')->name('regis');
+    Route::post('/regisStore', 'AuthController@regisStore')->name('regisStore');
+
     Route::get('/logout', function () {
         Session::flush();
         return redirect()->route(

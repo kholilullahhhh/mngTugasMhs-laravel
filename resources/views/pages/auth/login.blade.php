@@ -52,13 +52,17 @@
                         Login
                     </button>
                 </div>
+
             </form>
 
 
         </div>
     </div>
-    <div class="mt-5 text-muted text-center">
-        <a href="/">Kembali ke beranda</a>
+    <div class="mt-2 text-muted text-center">
+        Belum Punya Akun? <a href="{{ route('regis') }}">Registrasi</a>
+        <br><br><a href="/">Kembali ke beranda</a>
+
+
     </div>
     <script src="{{ asset('library/sweetalert/dist/sweetalert.min.js') }}"></script>
 
