@@ -16,7 +16,8 @@
             </li>
 
             @if (session('role') == 'admin')
-                <li class="nav-item dropdown {{ $menu == 'pegawai' || $menu == 'agenda' ? 'active' : '' }}">
+                <li
+                    class="nav-item dropdown {{ $menu == 'pegawai' || $menu == 'agenda' || $menu == 'kelas' ? 'active' : '' }}">
                     <a href="#" class="nav-link has-dropdown"><i class="fas fa-sitemap"></i>
                         <span>Master Data</span></a>
                     <ul class="dropdown-menu">
@@ -40,10 +41,10 @@
                 </li>
 
                 <!-- <li class="{{ $menu == 'indikator_level' ? 'active' : '' }}">
-                                <a class="nav-link" href="{{ route('indikator_level.index') }}">
-                                    <i class="fas fa-wallet"></i> <span>Penilaian Kinerja</span>
-                                </a>
-                            </li> -->
+                                        <a class="nav-link" href="{{ route('indikator_level.index') }}">
+                                            <i class="fas fa-wallet"></i> <span>Penilaian Kinerja</span>
+                                        </a>
+                                    </li> -->
 
 
                 <li class="{{ $menu == 'absensi' ? 'active' : '' }}">
@@ -85,8 +86,8 @@
                     </a>
                 </li>
 
-                <li class="{{ $menu == 'absensi' ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('absensi.index') }}">
+                <li class="{{ $menu == 'agenda' ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('agenda.index') }}">
                         <i class="fas fa-wallet"></i> <span>Data Tugas</span>
                     </a>
                 </li>

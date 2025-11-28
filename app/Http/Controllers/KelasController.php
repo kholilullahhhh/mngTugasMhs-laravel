@@ -16,14 +16,13 @@ class KelasController extends Controller
     public function index()
     {
         // agenda user
-        $userId = auth()->id();
-        $kelasUser = Kelas::where('user_id', $userId)->get();
+        // $userId = auth()->id();
 
         // $datas = Kelas::get();
-        $datas = Kelas::with(['user'])->get();
+        $datas = Kelas::get();
 
         $menu = $this->menu;
-        return view('pages.admin.kelas.index', compact('menu', 'datas', 'kelasUser'));
+        return view('pages.admin.kelas.index', compact('menu', 'datas'));
     }
 
     /**

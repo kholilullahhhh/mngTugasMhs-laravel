@@ -37,7 +37,7 @@
                                                     <th>Nama Kelas</th>
                                                     <th>Ruangan</th>
                                                     <!-- <th>User ID</th> -->
-                                                    <th>Tanggal Dibuat</th>
+                                                    <!-- <th>Tanggal Dibuat</th> -->
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -48,7 +48,7 @@
                                                         <td>{{ $data->nm_kelas ?? '' }}</td>
                                                         <td>{{ $data->ruangan ?? '' }}</td>
                                                         <!-- <td>{{ $data->user->name ?? '' }}</td> -->
-                                                        <td>{{ $data->created_at->format('d M Y') ?? '' }}</td>
+                                                        <!-- <td>{{ $data->created_at->format('d M Y') ?? '' }}</td> -->
                                                         <td>
                                                             <a href="{{ route('kelas.edit', $data->id) }}"
                                                                 class="btn btn-warning my-2"><i class="fas fa-edit"></i></a>

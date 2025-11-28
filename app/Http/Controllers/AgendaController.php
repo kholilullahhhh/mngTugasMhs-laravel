@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Agenda;
+use App\Models\Kelas;
 use Illuminate\Http\Request;
 
 class AgendaController extends Controller
@@ -19,7 +20,8 @@ class AgendaController extends Controller
         $userId = auth()->id();
         $agendaUser = Agenda::where('user_id', $userId)->get();
 
-        $datas = Agenda::get();
+
+        $datas = Agenda::with(['kelas'])->get();
         $menu = $this->menu;
         return view('pages.admin.agenda.index', compact('menu', 'datas', 'agendaUser'));
     }
@@ -30,7 +32,8 @@ class AgendaController extends Controller
     public function create()
     {
         $menu = $this->menu;
-        return view('pages.admin.agenda.create', compact('menu'));
+        $kelas = Kelas::all();
+        return view('pages.admin.agenda.create', compact('menu', 'kelas'));
     }
 
     /**
@@ -61,9 +64,10 @@ class AgendaController extends Controller
     public function edit($id)
     {
         $data = Agenda::find($id);
+        $kelas = Kelas::all();
         $menu = $this->menu;
 
-        return view('pages.admin.agenda.edit', compact('data', 'menu'));
+        return view('pages.admin.agenda.edit', compact('data', 'menu', 'kelas'));
     }
 
     /**
