@@ -11,7 +11,7 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Ubah Jadwal Kegiatan</h1>
+                <h1>Ubah Data tugas</h1>
             </div>
 
             <div class="section-body">
@@ -29,7 +29,8 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="form-group row mb-4">
-                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Judul</label>
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Judul
+                                            Tugas</label>
                                         <div class="col-sm-12 col-md-7">
                                             <input value="{{ $data->judul }}" required type="text" name="judul"
                                                 class="form-control">
@@ -37,8 +38,8 @@
                                     </div>
 
                                     <div class="form-group row mb-4">
-                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Lokasi
-                                            Kegiatan</label>
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Ruangan
+                                            Kelas</label>
                                         <div class="col-sm-6 col-md-4">
                                             <input required type="text" class="form-control"
                                                 value="{{ $data->tempat_kegiatan }}" name="lokasi_kegiatan">
@@ -57,7 +58,7 @@
                                     </div> --}}
                                     <div class="form-group row mb-4">
                                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Isi
-                                            Agenda</label>
+                                            Tugas</label>
                                         <div class="col-sm-12 col-md-7">
                                             <textarea required name="deskripsi_kegiatan"
                                                 class="summernote">{!! $data->deskripsi_kegiatan !!}</textarea>
@@ -66,7 +67,7 @@
 
                                     <div class="form-group row mb-4">
                                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tanggal
-                                            Agenda</label>
+                                            Pembuatan Tugas</label>
                                         <div class="col-sm-6 col-md-4 mb-4">
                                             <input value="{{ $data->tgl_kegiatan }}" required type="date" value=""
                                                 class="form-control" name="tgl_kegiatan">
@@ -74,8 +75,16 @@
                                     </div>
 
                                     <div class="form-group row mb-4">
-                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Jam
-                                            Agenda</label>
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tanggal
+                                            Deadline Tugas</label>
+                                        <div class="col-sm-6 col-md-4 mb-4">
+                                            <input required type="date" value="" class="form-control" name="tgl_selesai">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mb-4">
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Jam Deadline
+                                            Tugas</label>
                                         <div class="col-sm-6 col-md-4 mb-4">
                                             <input value="{{ $data->jam_mulai }}" required type="time" value=""
                                                 class="form-control" name="jam_mulai">
@@ -99,7 +108,7 @@
                                     <div class="form-group row mb-4">
                                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
                                         <div class="col-sm-12 col-md-7">
-                                            <button class="btn btn-primary">Ubah Agenda</button>
+                                            <button class="btn btn-primary">Ubah Data</button>
                                             <a href="{{ route('agenda.index') }}" class="btn btn-warning">Kembali</a>
                                         </div>
                                     </div>

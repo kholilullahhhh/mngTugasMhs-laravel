@@ -11,7 +11,7 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Tambah Jadwal Kegiatan</h1>
+                <h1>Tambah Tugas</h1>
             </div>
 
             <div class="section-body">
@@ -28,17 +28,19 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="form-group row mb-4">
-                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Judul</label>
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Judul
+                                            tugas</label>
                                         <div class="col-sm-12 col-md-7">
                                             <input required type="text" name="judul" class="form-control">
                                         </div>
                                     </div>
-                                    
+
                                     <div class="form-group row mb-4">
-                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Lokasi Kegiatan</label>
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Ruangan
+                                            Kelas</label>
                                         <div class="col-sm-6 col-md-4">
-                                            <input required type="text" value=""
-                                                class="form-control" name="lokasi_kegiatan">
+                                            <input required type="text" value="" class="form-control"
+                                                name="lokasi_kegiatan">
                                         </div>
                                     </div>
                                     {{-- <div class="form-group row mb-4">
@@ -54,25 +56,32 @@
                                     </div> --}}
                                     <div class="form-group row mb-4">
                                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Isi
-                                            Agenda</label>
+                                            Tugas</label>
                                         <div class="col-sm-12 col-md-7">
                                             <textarea required name="deskripsi_kegiatan" class="summernote"></textarea>
                                         </div>
                                     </div>
 
                                     <div class="form-group row mb-4">
-                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tanggal Agenda</label>
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tanggal
+                                            Pembuatan Tugas</label>
                                         <div class="col-sm-6 col-md-4 mb-4">
-                                            <input required  type="date" value=""
-                                                class="form-control" name="tgl_kegiatan">
+                                            <input required type="date" value="" class="form-control" name="tgl_kegiatan">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-4">
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tanggal
+                                            Deadline Tugas</label>
+                                        <div class="col-sm-6 col-md-4 mb-4">
+                                            <input required type="date" value="" class="form-control" name="tgl_selesai">
                                         </div>
                                     </div>
 
                                     <div class="form-group row mb-4">
-                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Jam Agenda</label>
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Jam
+                                            Deadline tugas</label>
                                         <div class="col-sm-6 col-md-4 mb-4">
-                                            <input required  type="time" value=""
-                                                class="form-control" name="jam_mulai">
+                                            <input required type="time" value="" class="form-control" name="jam_mulai">
                                         </div>
                                     </div>
 

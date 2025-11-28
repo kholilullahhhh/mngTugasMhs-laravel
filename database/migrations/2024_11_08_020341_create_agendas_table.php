@@ -13,16 +13,18 @@ return new class extends Migration {
         Schema::create('agendas', function (Blueprint $table) {
             $table->id();
             $table->string('user_id')->nullable(); // Optional user ID for the creator
+            $table->string('kelas_id')->nullable(); // Optional user ID for the creator
             $table->string('judul'); //Agenda Rapat 
             $table->string('tempat_kegiatan'); //Ruangan
             $table->date('tgl_kegiatan');
+            $table->date('tgl_selesai');
             $table->time('jam_mulai');
             $table->text('deskripsi_kegiatan'); //deskripsi rapat
             $table->string('status');
             $table->timestamps();
         });
     }
-    
+
 
     /**
      * Reverse the migrations.
