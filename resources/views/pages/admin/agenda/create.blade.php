@@ -35,20 +35,26 @@
                                         </div>
                                     </div>
 
+
                                     <div class="form-group row mb-4">
-                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Ruangan
-                                            Kelas</label>
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">
+                                            Ruangan Kelas
+                                        </label>
                                         <div class="col-sm-6 col-md-4">
-                                            <select required name="lokasi_kegiatan" class="form-control">
+                                            <select required name="kelas_id" class="form-control selectric">
                                                 <option value="">-- Pilih Ruangan --</option>
+                                                
                                                 @foreach ($kelas as $k)
-                                                        <option value="{{ $k->id }}" {{ old('lokasi_kegiatan') == $k->id ? 'selected' : '' }}>
-                                                            {{ $k->name }} - {{ $k->jurusan }}
-                                                        </option>
-                                                    @endforeach
+                                                    <option value="{{ $k->id }}" 
+                                                        {{ old('kelas_id') == $k->id ? 'selected' : '' }}>
+                                                        {{ $k->nm_kelas }} - {{ $k->ruangan }}
+                                                    </option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
+                                    
+
 
                                     {{-- <div class="form-group row mb-4">
                                         <label

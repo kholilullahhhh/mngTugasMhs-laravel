@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => 'Data Agenda'])
+@extends('layouts.app', ['title' => 'Data Tema'])
 @section('content')
     @push('styles')
         <link rel="stylesheet" href="{{ asset('library/summernote/dist/summernote-bs4.css') }}">
@@ -11,96 +11,80 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Ubah Data tugas</h1>
+                <h1>Ubah Data Tugas</h1>
             </div>
 
             <div class="section-body">
-
                 <div class="row">
-
                     <div class="col-md-12 col-lg-12">
-                        <form action="{{ route('agenda.update') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('agenda.update', $data->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
-                            <input required type="hidden" name="id" value="{{ $data->id }}" class="form-control">
+                            <input type="hidden" name="id" value="{{ $data->id }}">
+                            
                             <div class="card">
                                 <div class="card-header">
                                     <h4></h4>
                                 </div>
                                 <div class="card-body">
                                     <div class="form-group row mb-4">
-                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Judul
-                                            Tugas</label>
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Judul Tugas</label>
                                         <div class="col-sm-12 col-md-7">
-                                            <input value="{{ $data->judul }}" required type="text" name="judul"
-                                                class="form-control">
+                                            <input value="{{ $data->judul }}" required type="text" name="judul" class="form-control">
                                         </div>
                                     </div>
 
                                     <div class="form-group row mb-4">
-                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Ruangan
-                                            Kelas</label>
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">
+                                            Ruangan Kelas
+                                        </label>
                                         <div class="col-sm-6 col-md-4">
-                                            <input required type="text" class="form-control"
-                                                value="{{ $data->tempat_kegiatan }}" name="lokasi_kegiatan">
-                                        </div>
-                                    </div>
-                                    {{-- <div class="form-group row mb-4">
-                                        <label
-                                            class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Kategori</label>
-                                        <div class="col-sm-12 col-md-7">
-                                            <select required name="kategori_id" class="form-control selectric">
-                                                <option>Tech</option>
-                                                <option>News</option>
-                                                <option>Political</option>
+                                            <select required name="kelas_id" class="form-control selectric">
+                                                <option value="">-- Pilih Ruangan --</option>
+                                                @foreach ($kelas as $k)
+                                                    <option value="{{ $k->id }}" 
+                                                        {{ $data->kelas_id == $k->id ? 'selected' : '' }}>
+                                                        {{ $k->nm_kelas }} - {{ $k->ruangan }}
+                                                    </option>
+                                                @endforeach
                                             </select>
                                         </div>
-                                    </div> --}}
+                                    </div>
+
                                     <div class="form-group row mb-4">
-                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Isi
-                                            Tugas</label>
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Isi Tugas</label>
                                         <div class="col-sm-12 col-md-7">
-                                            <textarea required name="deskripsi_kegiatan"
-                                                class="summernote">{!! $data->deskripsi_kegiatan !!}</textarea>
+                                            <textarea required name="deskripsi_kegiatan" class="summernote">{!! $data->deskripsi_kegiatan !!}</textarea>
                                         </div>
                                     </div>
 
                                     <div class="form-group row mb-4">
-                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tanggal
-                                            Pembuatan Tugas</label>
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tanggal Pembuatan Tugas</label>
                                         <div class="col-sm-6 col-md-4 mb-4">
-                                            <input value="{{ $data->tgl_kegiatan }}" required type="date" value=""
-                                                class="form-control" name="tgl_kegiatan">
+                                            <input value="{{ $data->tgl_kegiatan }}" required type="date" class="form-control" name="tgl_kegiatan">
                                         </div>
                                     </div>
 
                                     <div class="form-group row mb-4">
-                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tanggal
-                                            Deadline Tugas</label>
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tanggal Deadline Tugas</label>
                                         <div class="col-sm-6 col-md-4 mb-4">
-                                            <input required type="date" value="" class="form-control" name="tgl_selesai">
+                                            <input value="{{ $data->tgl_selesai }}" required type="date" class="form-control" name="tgl_selesai">
                                         </div>
                                     </div>
 
                                     <div class="form-group row mb-4">
-                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Jam Deadline
-                                            Tugas</label>
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Jam Deadline Tugas</label>
                                         <div class="col-sm-6 col-md-4 mb-4">
-                                            <input value="{{ $data->jam_mulai }}" required type="time" value=""
-                                                class="form-control" name="jam_mulai">
+                                            <input value="{{ $data->jam_mulai }}" required type="time" class="form-control" name="jam_mulai">
                                         </div>
-
                                     </div>
-
 
                                     <div class="form-group row mb-4">
                                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Status</label>
                                         <div class="col-sm-6 col-md-4">
                                             <select class="form-control selectric" name="status" required>
-                                                <option {{ $data->status == 'publish' ? 'selected' : '' }} value="publish">
-                                                    Publish</option>
-                                                <option {{ $data->status == 'pending' ? 'selected' : '' }} value="pending">
-                                                    Pending</option>
+                                                <option {{ $data->status == 'publish' ? 'selected' : '' }} value="publish">Publish</option>
+                                                <option {{ $data->status == 'pending' ? 'selected' : '' }} value="pending">Pending</option>
                                             </select>
                                         </div>
                                     </div>
@@ -114,18 +98,11 @@
                                     </div>
                                 </div>
                             </div>
-
-
                         </form>
                     </div>
-
                 </div>
-
-
-
             </div>
-    </div>
-    </section>
+        </section>
     </div>
 
     @push('scripts')
@@ -133,10 +110,8 @@
         <script src="{{ asset('library/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
         <script src="{{ asset('library/summernote/dist/summernote-bs4.js') }}"></script>
         <script src="{{ asset('library/upload-preview/upload-preview.js') }}"></script>
-        <script src="{{ asset('js/page/features-post-create.js') }}"></script>
         <script src="{{ asset('library/selectric/public/jquery.selectric.min.js') }}"></script>
-        <script src="{{ asset('js/page/features-post-create.js') }}"></script>
-
         <script src="{{ asset('js/page/forms-advanced-forms.js') }}"></script>
+        <script src="{{ asset('js/page/features-post-create.js') }}"></script>
     @endpush
 @endsection

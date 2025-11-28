@@ -33,6 +33,7 @@ class AgendaController extends Controller
     {
         $menu = $this->menu;
         $kelas = Kelas::all();
+        // dd($kelas);
         return view('pages.admin.agenda.create', compact('menu', 'kelas'));
     }
 
@@ -42,7 +43,7 @@ class AgendaController extends Controller
     public function store(Request $request)
     {
         $r = $request->all();
-        $r['tempat_kegiatan'] = $r['lokasi_kegiatan'];
+        // $r['tempat_kegiatan'] = $r['lokasi_kegiatan'];
         // dd($r);
         Agenda::create($r);
 

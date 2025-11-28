@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->string('user_id')->nullable(); // Optional user ID for the creator
             $table->string('kelas_id')->nullable(); // Optional user ID for the creator
             $table->string('judul'); //Agenda Rapat 
-            $table->string('tempat_kegiatan'); //Ruangan
+            // $table->string('tempat_kegiatan'); //Ruangan
             $table->date('tgl_kegiatan');
             $table->date('tgl_selesai');
             $table->time('jam_mulai');

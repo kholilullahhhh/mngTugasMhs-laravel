@@ -8,8 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Kelas extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'nm_kelas',
         'ruangan',
     ];
+
+    public function agenda()
+    {
+        return $this->hasMany(Agenda::class);
+    }
 }

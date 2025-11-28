@@ -12,7 +12,7 @@ class Agenda extends Model
         'user_id', // ID pengguna yang membuat agenda
         'kelas_id', // ID kelas terkait agenda
         'judul',
-        'tempat_kegiatan',
+        // 'tempat_kegiatan',
         'tgl_kegiatan',
         'tgl_selesai',
         'jam_mulai',

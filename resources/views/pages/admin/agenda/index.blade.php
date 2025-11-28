@@ -39,7 +39,7 @@
                                                     <th class="text-center">#</th>
                                                     <th>Judul Tugas</th>
                                                     {{-- <th>Isi Agenda</th> --}}
-                                                    <th>Mata Kuliah</th>
+                                                    <th>Ruangan</th>
                                                     <th>Tanggal Pembuatan</th>
                                                     <th>Tanggal Deadline</th>
                                                     <th>Jam Deadline</th>
@@ -58,7 +58,7 @@
                                                                                         <td>{{ ++$i }}</td>
                                                                                         <td>{{ $data->judul ?? '' }}</td>
                                                                                         {{-- <td>{!! $data->isi ?? '' !!}</td> --}}
-                                                                                        <td>{{ $data->tempat_kegiatan }} </td>
+                                                                                        <td>{{ $data->kelas->nm_kelas ?? '' }} - {{ $data->kelas->ruangan ?? '' }} </td>
                                                                                         <td>{{ $data->tgl_kegiatan }} </td>
                                                                                         <td>{{ $data->tgl_selesai }} </td>
                                                                                         <td>{{ $data->jam_mulai }} </td>
@@ -111,7 +111,7 @@
                                                     <th class="text-center">#</th>
                                                     <th>Judul Tugas</th>
                                                     {{-- <th>Isi Agenda</th> --}}
-                                                    <th>Mata Kuliah</th>
+                                                    <!-- <th>Mata Kuliah</th> -->
                                                     <th>Tanggal Pembuatan</th>
                                                     <th>Tanggal Deadline</th>
                                                     <th>Jam Deadline</th>
@@ -189,7 +189,7 @@
 
                                                     $tgl_kegiatan = strftime('%d %B', strtotime($data->tgl_kegiatan));
                                                     $tgl_selesai = strftime('%d %B %Y', strtotime($data->tgl_selesai));
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ?>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ?>
                                                                                     <tr>
                                                                                         <td>{{ ++$i }}</td>
                                                                                         <td>{{ $data->kelas ?? '' }}</td>
