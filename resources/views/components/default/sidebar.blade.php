@@ -1,10 +1,10 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="{{route('dashboard') }}">DIVLERN GWE</a>
+            <a href="{{route('dashboard') }}">GO STUDY</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="{{route('dashboard') }}">DIVLERN GWE</a>
+            <a href="{{route('dashboard') }}">GOS</a>
         </div>
 
         <ul class="sidebar-menu">
@@ -41,10 +41,10 @@
                 </li>
 
                 <!-- <li class="{{ $menu == 'indikator_level' ? 'active' : '' }}">
-                                        <a class="nav-link" href="{{ route('indikator_level.index') }}">
-                                            <i class="fas fa-wallet"></i> <span>Penilaian Kinerja</span>
-                                        </a>
-                                    </li> -->
+                                                <a class="nav-link" href="{{ route('indikator_level.index') }}">
+                                                    <i class="fas fa-wallet"></i> <span>Penilaian Kinerja</span>
+                                                </a>
+                                            </li> -->
 
 
                 <li class="{{ $menu == 'absensi' ? 'active' : '' }}">
