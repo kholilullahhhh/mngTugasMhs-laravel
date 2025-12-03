@@ -21,6 +21,7 @@ class AdminController extends Controller
 
     public function index(Request $request)
     {
+        // $profile = Admin::find($id);
         $selectedYear = $request->year ?? date('Y');
         $selectedMonth = $request->month ?? date('n');
 
@@ -92,6 +93,7 @@ class AdminController extends Controller
             'menu' => 'dashboard',
             'selectedYear' => $selectedYear,
             'selectedMonth' => $selectedMonth,
+            // 'profile' => $profile,
 
             // User stats
             'totalUsers' => $totalUsers,

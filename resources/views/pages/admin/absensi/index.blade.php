@@ -57,7 +57,8 @@
                                             <tr>
                                                 <th class="text-center" width="5%">No</th>
                                                 <th width="15%">Nama Tugas</th>
-                                                <th width="12%">Nama Mahasoswa</th>
+                                                <th width="12%">Nama Mahasiswa</th>
+                                                <th width="12%">Nama Dosen</th>
                                                 <th width="10%">NIM</th>
                                                 <th width="12%">Tanggal Deadline</th>
                                                 <th width="12%">Tanggal Pengumpulan</th>
@@ -72,6 +73,7 @@
                                                     <td class="text-center">{{ ++$i }}</td>
                                                     <td>{{ $data->agenda->judul ?? 'N/A' }}</td>
                                                     <td>{{ $data->user->name ?? 'N/A' }}</td>
+                                                    <td>{{ $data->agenda->user->name ?? 'N/A' }}</td>
                                                     <td>{{ $data->user->nip ?? 'N/A' }}</td>
                                                     <td>{{ $data->agenda->tgl_selesai ?? 'N/A' }}</td>
                                                     

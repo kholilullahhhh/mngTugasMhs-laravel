@@ -12,7 +12,7 @@ class AgendaSeeder extends Seeder
         $agendas = [
             // User 1
             [
-                'user_id' => 1,
+                'user_id' => 12,
                 'kelas_id' => 1,
                 'judul' => 'Project Landing Page HTML & CSS',
                 'tgl_kegiatan' => '2025-08-20',
@@ -22,7 +22,7 @@ class AgendaSeeder extends Seeder
                 'status' => 'publish',
             ],
             [
-                'user_id' => 1,
+                'user_id' => 12,
                 'kelas_id' => 1,
                 'judul' => 'Presentasi Desain UI/UX Aplikasi Mobile',
                 'tgl_kegiatan' => '2025-08-21',
@@ -32,7 +32,7 @@ class AgendaSeeder extends Seeder
                 'status' => 'publish',
             ],
             [
-                'user_id' => 1,
+                'user_id' => 12,
                 'kelas_id' => 1,
                 'judul' => 'Tugas Mini Project Basis Data',
                 'tgl_kegiatan' => '2025-08-22',
@@ -44,7 +44,7 @@ class AgendaSeeder extends Seeder
 
             // User 2
             [
-                'user_id' => 2,
+                'user_id' => 12,
                 'kelas_id' => 2,
                 'judul' => 'Belajar Routing Laravel & Controller',
                 'tgl_kegiatan' => '2025-08-23',
@@ -54,7 +54,7 @@ class AgendaSeeder extends Seeder
                 'status' => 'publish',
             ],
             [
-                'user_id' => 2,
+                'user_id' => 12,
                 'kelas_id' => 2,
                 'judul' => 'Tugas Analisis Sistem Informasi',
                 'tgl_kegiatan' => '2025-08-24',
@@ -66,7 +66,7 @@ class AgendaSeeder extends Seeder
 
             // User 3
             [
-                'user_id' => 3,
+                'user_id' => 12,
                 'kelas_id' => 3,
                 'judul' => 'Laporan Praktikum Jaringan Komputer',
                 'tgl_kegiatan' => '2025-08-25',
@@ -78,7 +78,7 @@ class AgendaSeeder extends Seeder
 
             // User 4
             [
-                'user_id' => 4,
+                'user_id' => 12,
                 'kelas_id' => 4,
                 'judul' => 'Analisis Keamanan Web (Cyber Security)',
                 'tgl_kegiatan' => '2025-08-26',
@@ -88,7 +88,7 @@ class AgendaSeeder extends Seeder
                 'status' => 'publish',
             ],
             [
-                'user_id' => 4,
+                'user_id' => 12,
                 'kelas_id' => 4,
                 'judul' => 'Praktikum Pemrograman Berorientasi Objek',
                 'tgl_kegiatan' => '2025-08-27',
@@ -100,7 +100,7 @@ class AgendaSeeder extends Seeder
 
             // User 5
             [
-                'user_id' => 5,
+                'user_id' => 12,
                 'kelas_id' => 5,
                 'judul' => 'Tugas CRUD Laravel Dasar',
                 'tgl_kegiatan' => '2025-08-28',
@@ -110,7 +110,7 @@ class AgendaSeeder extends Seeder
                 'status' => 'publish',
             ],
             [
-                'user_id' => 5,
+                'user_id' => 12,
                 'kelas_id' => 5,
                 'judul' => 'Tugas Struktur Data Linked List',
                 'tgl_kegiatan' => '2025-08-29',
@@ -122,7 +122,7 @@ class AgendaSeeder extends Seeder
 
             // User 6
             [
-                'user_id' => 6,
+                'user_id' => 12,
                 'kelas_id' => 6,
                 'judul' => 'Makalah Sistem Operasi',
                 'tgl_kegiatan' => '2025-08-30',
@@ -132,7 +132,7 @@ class AgendaSeeder extends Seeder
                 'status' => 'publish',
             ],
             [
-                'user_id' => 6,
+                'user_id' => 12,
                 'kelas_id' => 6,
                 'judul' => 'Praktikum Mobile Programming',
                 'tgl_kegiatan' => '2025-08-31',
@@ -142,7 +142,7 @@ class AgendaSeeder extends Seeder
                 'status' => 'publish',
             ],
             [
-                'user_id' => 6,
+                'user_id' => 12,
                 'kelas_id' => 6,
                 'judul' => 'Tugas Mini Project Machine Learning',
                 'tgl_kegiatan' => '2025-09-01',
@@ -154,7 +154,7 @@ class AgendaSeeder extends Seeder
 
             // User 7
             [
-                'user_id' => 7,
+                'user_id' => 12,
                 'kelas_id' => 7,
                 'judul' => 'Review Buku Pemrograman Python',
                 'tgl_kegiatan' => '2025-09-02',
@@ -166,7 +166,7 @@ class AgendaSeeder extends Seeder
 
             // User 8
             [
-                'user_id' => 8,
+                'user_id' => 12,
                 'kelas_id' => 8,
                 'judul' => 'Tugas Rangkuman Materi AI Dasar',
                 'tgl_kegiatan' => '2025-09-03',
@@ -178,7 +178,7 @@ class AgendaSeeder extends Seeder
 
             // User 9
             [
-                'user_id' => 9,
+                'user_id' => 12,
                 'kelas_id' => 9,
                 'judul' => 'Observasi Proyek Internet of Things',
                 'tgl_kegiatan' => '2025-09-04',
@@ -190,7 +190,7 @@ class AgendaSeeder extends Seeder
 
             // User 10
             [
-                'user_id' => 10,
+                'user_id' => 12,
                 'kelas_id' => 10,
                 'judul' => 'Presentasi Cloud Computing',
                 'tgl_kegiatan' => '2025-09-05',
@@ -200,7 +200,7 @@ class AgendaSeeder extends Seeder
                 'status' => 'publish',
             ],
             [
-                'user_id' => 10,
+                'user_id' => 12,
                 'kelas_id' => 10,
                 'judul' => 'Praktikum DevOps Dasar',
                 'tgl_kegiatan' => '2025-09-06',
