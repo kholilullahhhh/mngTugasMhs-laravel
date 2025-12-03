@@ -69,10 +69,10 @@
                                                     <td>
                                                         @if($user->role == 'admin')
                                                             <span class="badge badge-primary">Admin</span>
-                                                        @elseif($user->role == 'kepala_kua')
-                                                            <span class="badge badge-info">Kepala KUA</span>
+                                                        @elseif($user->role == 'dosen')
+                                                            <span class="badge badge-info">Dosen</span>
                                                         @else
-                                                            <span class="badge badge-info">Pegawai</span>
+                                                            <span class="badge badge-info">Mahasiswa</span>
                                                         @endif
                                                     </td>
                                                     <td>
@@ -159,7 +159,7 @@
                         text: '{{ session('error') }}',
                     });
                 @endif
-                            });
+                                    });
         </script>
     @endpush
 @endsection
