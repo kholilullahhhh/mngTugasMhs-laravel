@@ -59,8 +59,9 @@
                                                 <th width="15%">Nama Tugas</th>
                                                 <th width="12%">Nama Mahasoswa</th>
                                                 <th width="10%">NIM</th>
+                                                <th width="12%">Tanggal Deadline</th>
+                                                <th width="12%">Tanggal Pengumpulan</th>
                                                 <th width="10%">Status</th>
-                                                <th width="12%">Tanggal</th>
                                                 <th width="10%">Laporan</th>
                                                 <th width="8%">Aksi</th>
                                             </tr>
@@ -72,6 +73,9 @@
                                                     <td>{{ $data->agenda->judul ?? 'N/A' }}</td>
                                                     <td>{{ $data->user->name ?? 'N/A' }}</td>
                                                     <td>{{ $data->user->nip ?? 'N/A' }}</td>
+                                                    <td>{{ $data->agenda->tgl_selesai ?? 'N/A' }}</td>
+                                                    
+                                                    <td>{{ $data->created_at->format('d/m/Y H:i') }}</td>
                                                     <td>
                                                         @switch($data->status)
                                                             @case('hadir')
@@ -93,7 +97,6 @@
                                                                 <span class="badge badge-light">Unknown</span>
                                                         @endswitch
                                                     </td>
-                                                    <td>{{ $data->created_at->format('d/m/Y H:i') }}</td>
                                                     <td>
                                                         @if($data->laporan)
                                                             <a href="{{ asset('upload/laporan/' . $data->laporan) }}" 

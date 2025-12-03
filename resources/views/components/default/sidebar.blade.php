@@ -41,10 +41,10 @@
                 </li>
 
                 <!-- <li class="{{ $menu == 'indikator_level' ? 'active' : '' }}">
-                                                <a class="nav-link" href="{{ route('indikator_level.index') }}">
-                                                    <i class="fas fa-wallet"></i> <span>Penilaian Kinerja</span>
-                                                </a>
-                                            </li> -->
+                                                                <a class="nav-link" href="{{ route('indikator_level.index') }}">
+                                                                    <i class="fas fa-wallet"></i> <span>Penilaian Kinerja</span>
+                                                                </a>
+                                                            </li> -->
 
 
                 <li class="{{ $menu == 'absensi' ? 'active' : '' }}">
@@ -66,13 +66,13 @@
 
                 <li class="{{ $menu == 'agenda' ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('agenda.index') }}">
-                        <i class="fas fa-wallet"></i> <span>Data Kegiatan</span>
+                        <i class="fas fa-wallet"></i> <span>Data Tugas</span>
                     </a>
                 </li>
 
                 <li class="{{ $menu == 'absensi' ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('user.absensi.index') }}">
-                        <i class="fas fa-wallet"></i> <span>Data Absensi</span>
+                        <i class="fas fa-wallet"></i> <span>Data Pengumpulan Tugas</span>
                     </a>
                 </li>
                 <li class="menu-header">Landing Page</li>
@@ -81,7 +81,7 @@
             @if (session('role') == 'dosen')
 
                 <li class="{{ $menu == 'indikator_level' ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('indikator_level.index') }}">
+                    <a class="nav-link" href="{{ route('user.absensi.index') }}">
                         <i class="fas fa-wallet"></i> <span>Penilaian Kinerja</span>
                     </a>
                 </li>

@@ -10,18 +10,22 @@
                 font-weight: 500;
                 padding: 0.35em 0.65em;
             }
+
             .img-thumbnail {
                 max-width: 100px;
                 height: auto;
                 border: 1px solid #dee2e6;
                 border-radius: 4px;
             }
+
             .action-buttons {
                 white-space: nowrap;
             }
+
             .action-buttons .btn {
                 margin-right: 5px;
             }
+
             .action-buttons .btn:last-child {
                 margin-right: 0;
             }
@@ -44,11 +48,6 @@
                         <div class="card">
                             <div class="card-header">
                                 <h4>Daftar Pengumpulan Tugas</h4>
-                                <div class="card-header-action">
-                                    <a href="{{ route('absensi.create') }}" class="btn btn-primary btn-icon icon-left">
-                                        <i class="fas fa-plus"></i> Tambah Pengumpulan Tugas
-                                    </a>
-                                </div>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -59,8 +58,9 @@
                                                 <th width="15%">Nama Tugas</th>
                                                 <th width="12%">Nama Mahasoswa</th>
                                                 <th width="10%">NIM</th>
+                                                <th width="12%">Tanggal Deadline</th>
+                                                <th width="12%">Tanggal Pengumpulan</th>
                                                 <th width="10%">Status</th>
-                                                <th width="12%">Tanggal</th>
                                                 <th width="10%">Laporan</th>
                                                 <th width="8%">Aksi</th>
                                             </tr>
@@ -72,6 +72,9 @@
                                                     <td>{{ $data->agenda->judul ?? 'N/A' }}</td>
                                                     <td>{{ $data->user->name ?? 'N/A' }}</td>
                                                     <td>{{ $data->user->nip ?? 'N/A' }}</td>
+                                                    <td>{{ $data->agenda->tgl_selesai ?? 'N/A' }}</td>
+                                                    
+                                                    <td>{{ $data->created_at->format('d/m/Y H:i') }}</td>
                                                     <td>
                                                         @switch($data->status)
                                                             @case('hadir')
@@ -93,7 +96,6 @@
                                                                 <span class="badge badge-light">Unknown</span>
                                                         @endswitch
                                                     </td>
-                                                    <td>{{ $data->created_at->format('d/m/Y H:i') }}</td>
                                                     <td>
                                                         @if($data->laporan)
                                                             <a href="{{ asset('upload/laporan/' . $data->laporan) }}" 
@@ -135,7 +137,7 @@
         <script src="{{ asset('js/page/modules-datatables.js') }}"></script>
 
         <script type="text/javascript">
-            $(document).ready(function() {
+            $(document).ready(function () {
                 $('#table-absensi').DataTable({
                     responsive: true,
                     paging: true,
@@ -144,12 +146,12 @@
                         url: 'https://cdn.datatables.net/plug-ins/2.1.0/i18n/id.json',
                     },
                     columnDefs: [
-                        { orderable: false, targets: [6,7,8,9] }, // Disable sorting for image and action columns
-                        { searchable: false, targets: [0,6,7,8,9] }, // Disable searching for # and action columns
-                        { className: "text-center", targets: [0,4,9] } // Center align certain columns
+                        { orderable: false, targets: [6, 7, 8, 9] }, // Disable sorting for image and action columns
+                        { searchable: false, targets: [0, 6, 7, 8, 9] }, // Disable searching for # and action columns
+                        { className: "text-center", targets: [0, 4, 9] } // Center align certain columns
                     ],
                     dom: '<"top"f>rt<"bottom"lip><"clear">',
-                    initComplete: function() {
+                    initComplete: function () {
                         $('.dataTables_filter input').addClass('form-control').attr('placeholder', 'Cari...');
                         $('.dataTables_length select').addClass('form-control');
                     }
