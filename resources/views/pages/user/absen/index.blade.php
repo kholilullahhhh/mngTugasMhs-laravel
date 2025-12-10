@@ -40,14 +40,21 @@
                     <div class="breadcrumb-item active"><a href="{{ route('dashboard') }}">Dashboard</a></div>
                     <div class="breadcrumb-item">Absensi</div>
                 </div>
+                
             </div>
 
             <div class="section-body">
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-header">
+                            
+                             <div class="card-header">
                                 <h4>Daftar Pengumpulan Tugas</h4>
+                                <div class="card-header-action">
+                                    <a href="{{ route('user.absensi.create') }}" class="btn btn-primary btn-icon icon-left">
+                                        <i class="fas fa-plus"></i> Tambah Pengumpulan Tugas
+                                    </a>
+                                </div>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">

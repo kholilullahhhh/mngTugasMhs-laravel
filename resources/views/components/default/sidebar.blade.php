@@ -41,10 +41,10 @@
                 </li>
 
                 <!-- <li class="{{ $menu == 'indikator_level' ? 'active' : '' }}">
-                                                                <a class="nav-link" href="{{ route('indikator_level.index') }}">
-                                                                    <i class="fas fa-wallet"></i> <span>Penilaian Kinerja</span>
-                                                                </a>
-                                                            </li> -->
+                                                                    <a class="nav-link" href="{{ route('indikator_level.index') }}">
+                                                                        <i class="fas fa-wallet"></i> <span>Penilaian Kinerja</span>
+                                                                    </a>
+                                                                </li> -->
 
 
                 <li class="{{ $menu == 'absensi' ? 'active' : '' }}">
@@ -71,7 +71,7 @@
                 </li>
 
                 <li class="{{ $menu == 'absensi' ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('user.absensi.index') }}">
+                    <a class="nav-link" href="{{ route('absensi.index') }}">
                         <i class="fas fa-wallet"></i> <span>Data Pengumpulan Tugas</span>
                     </a>
                 </li>
@@ -82,7 +82,7 @@
 
                 <li class="{{ $menu == 'indikator_level' ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('user.absensi.index') }}">
-                        <i class="fas fa-wallet"></i> <span>Penilaian Kinerja</span>
+                        <i class="fas fa-wallet"></i> <span>Penilaian Tugas Mahasiswa/span>
                     </a>
                 </li>
 

@@ -18,7 +18,7 @@ class AgendaController extends Controller
     {
         // agenda user
         $userId = auth()->id();
-        $agendaUser = Agenda::where('user_id', $userId)->get();
+        $agendaUser = Agenda::get();
 
 
         $datas = Agenda::with(['kelas'])->get();

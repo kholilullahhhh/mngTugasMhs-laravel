@@ -13,20 +13,27 @@ class AbsenController extends Controller
     private $menu = 'absensi';
     public function userIndex()
     {
-        // $datas = Absensi::with('agenda')->get();
-        $datas = Absensi::whereHas('user', function ($query) {
-            $query->where('nip', auth()->user()->nip);
-        })->with(['user', 'agenda'])->latest()->get();
-        $menu = $this->menu;
+        $datas = Absensi::with(['user', 'agenda'])
+            ->where('user_id', auth()->id())
+            ->orderBy('created_at', 'desc')
+            ->get();
 
-        return view('pages.user.absen.index', compact('menu', 'datas'));
+        return view('pages.user.absen.index', [
+            'datas' => $datas,
+            'menu' => $this->menu
+        ]);
     }
+
+
     public function userCreate()
     {
         $menu = $this->menu;
-        // agenda user
+        $agendas = Agenda::where('status', 'publish')->get();
+
+
         $userId = auth()->id();
-        $agendas = Agenda::where('user_id', $userId)->get();
+        // $agendas = Agenda::where('user_id', $userId)->get();
+
         return view('pages.user.absen.create', compact('agendas', 'menu'));
     }
     public function userStore(Request $request)
