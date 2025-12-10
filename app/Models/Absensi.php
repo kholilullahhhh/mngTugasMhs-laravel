@@ -15,6 +15,7 @@ class Absensi extends Model
         'laporan', // laporan kegiatan 
         'status',
         'keterangan', // Optional field for additional notes
+        'nilai', // Optional field for additional notes
     ];
     public function agenda()
     {

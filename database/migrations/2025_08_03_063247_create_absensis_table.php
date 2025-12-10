@@ -18,6 +18,7 @@ return new class extends Migration {
             $table->string('laporan')->nullable();
             $table->enum('status', ['hadir', 'tidak hadir', 'izin', 'sakit', 'terlambat']); //status kehadiran
             $table->string('keterangan')->nullable(); // Optional field for additional notes
+            $table->string('nilai')->nullable(); // Optional field for additional notes
             $table->enum('validation_status', ['pending', 'validated', 'rejected'])->default('pending'); // validasi status
             $table->timestamps();
         });

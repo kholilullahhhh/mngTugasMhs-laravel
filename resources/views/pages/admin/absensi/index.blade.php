@@ -64,6 +64,7 @@
                                                 <th width="12%">Tanggal Pengumpulan</th>
                                                 <th width="10%">Status</th>
                                                 <th width="10%">Laporan</th>
+                                                <th width="10%">Nilai</th>
                                                 <th width="8%">Aksi</th>
                                             </tr>
                                         </thead>
@@ -109,6 +110,10 @@
                                                         @else
                                                             <span class="text-muted">-</span>
                                                         @endif
+                                                    </td>
+                                                    <td>
+                                                            <span class="badge badge-primary">{{ $data->nilai }}</span>
+                                                            <span class="text-muted"></span>
                                                     </td>
                                                     <td class="action-buttons">
                                                         <a href="{{ route('absensi.edit', $data->id) }}"

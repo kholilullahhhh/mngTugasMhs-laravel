@@ -105,7 +105,7 @@
                                         </div>
 
                                         <!-- Status Kehadiran -->
-                                        <div class="form-group row mb-4">
+                                        <!-- <div class="form-group row mb-4">
                                             <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3 required-field">Status Terkumpulnya Tugas</label>
                                             <div class="col-sm-12 col-md-7">
                                                 <select name="status" class="form-control" required>
@@ -117,7 +117,7 @@
                                                     <div class="text-danger mt-1">{{ $message }}</div>
                                                 @enderror
                                             </div>
-                                        </div>
+                                        </div> -->
 
                                         <!-- Keterangan -->
                                         <div class="form-group row mb-4">
